@@ -8,8 +8,46 @@
   <link rel="stylesheet" href="../assets/css/light.css" id="light-theme" />
   <link rel="stylesheet" href="../assets/css/dark.css" id="dark-theme" disabled />
   <style>
+    :root{--cv-blue:#2563eb}
     .print{max-width:900px;margin:24px auto;padding:16px}
-    @media print{.btn{display:none}}
+    .cv-header{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start}
+  .contact{display:flex;flex-direction:column;gap:4px;color:var(--muted)}
+    .cv-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    .cv-card{padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--card)}
+    .kv{display:flex;gap:10px;flex-wrap:wrap}
+    .kv span{display:inline-flex;gap:6px;align-items:center;padding:4px 8px;border:1px solid var(--border);border-radius:999px;background:color-mix(in oklab, var(--card) 92%, transparent)}
+    .cv h2{color:var(--cv-blue)}
+  .cv h2:after{display:none}
+    .avatar-cv{display:inline-flex;align-items:center;gap:10px}
+    .avatar-cv img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:1px solid var(--border)}
+    .page-break{display:none}
+    /* ATS mode: remove colors, photo, decorative underlines */
+    .ats .cv h2{color:inherit}
+    .ats .cv h2:after{display:none}
+    .ats .avatar-cv{display:none}
+    .ats .kv span{border-color:#bbb}
+  .cv-card{page-break-inside:avoid}
+  @page{size:A4;margin:8mm}
+  @media print{body{background:#fff}}
+    @media print{
+      .btn{display:none}
+    .card{box-shadow:none;border-color:#999}
+.print.card{border:0 !important;border-radius:0 !important}
+  .cv-card{border:0 !important}
+  .page-break{display:block;break-after:page;height:0}
+      /* tighten layout to fit exactly two pages */
+    body{font-size:12px;line-height:1.3}
+    .print{max-width:100%;padding:5mm}
+    h1{font-size:20px}
+    .cv h2{font-size:15px;margin:6px 0}
+    .cv-card{padding:8px;margin-bottom:8px}
+  .contact{gap:4px}
+  .kv span{padding:2px 5px;font-size:11px;border:0 !important}
+    ul{margin:6px 0;padding-left:18px}
+    li{margin:2px 0}
+      /* keep colors in print for styled mode */
+      *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    }
   </style>
   <script src="../assets/js/theme-toggle.js" defer></script>
   <script>document.addEventListener('DOMContentLoaded',()=>{ if(typeof loadSavedTheme==='function') loadSavedTheme(); });</script>
@@ -26,30 +64,82 @@
   <meta name="author" content="Hüdai APA" />
 </head>
 <body>
-  <div class="print card">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <h1 style="margin:0">Hüdai APA</h1>
-      <div class="actions"><a class="btn" href="/en/">← Back</a><button class="btn" onclick="window.print()">Print</button></div>
+  <div class="print card cv">
+    <div class="cv-header">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="avatar-cv"><img src="../assets/FOTO.jpg" alt="Hüdai APA photo" /></div>
+          <div>
+            <h1 style="margin:0">Hüdai APA</h1>
+            <div style="color:var(--muted);font-weight:500">Software Developer</div>
+          </div>
+        </div>
+        <div class="contact" style="margin-top:6px">
+          <span><strong>Location:</strong> Denizli, Turkey</span>
+          <span><strong>Mobile:</strong> (+90) 546 681 5952</span>
+          <span><strong>Email:</strong> <a href="mailto:hudaiapa88@gmail.com">hudaiapa88@gmail.com</a></span>
+          <span><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/hudaiapa" target="_blank" rel="noopener">linkedin.com/in/hudaiapa</a></span>
+          <span><strong>GitHub:</strong> <a href="https://github.com/hudaiapa88" target="_blank" rel="noopener">github.com/hudaiapa88</a></span>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="/en/">← Back</a>
+        <a class="btn" href="/en/cv.html?print=1">PDF (Styled)</a>
+        <a class="btn" href="/en/cv.html?ats=1&print=1">PDF (ATS)</a>
+      </div>
     </div>
-    <p class="muted">Software Developer — Denizli, Turkey · <a href="mailto:hudaiapa88@gmail.com">hudaiapa88@gmail.com</a> · <a href="https://linkedin.com/in/hudaiapa">linkedin</a></p>
     <h2>Summary</h2>
-    <p>I’m a versatile Software Developer specialized in Java and Spring Boot with 4+ years building scalable microservices. Led Lingol end-to-end across mobile (Flutter), frontend (React), and backend (Spring Boot). Experience in image processing and ML.</p>
-    <h2>Experience</h2>
-    <ul>
-      <li>Freelance Developer (Nov 2023 – Present) — Custom solutions incl. Lingol.</li>
-      <li>Java Backend Developer, Aselsis A.Ş. (Jan 2021 – Nov 2023) — Backend architecture, APIs, DB, performance; image processing.</li>
-    </ul>
-    <h2>Projects</h2>
-    <ul>
-      <li>Lingol — Flutter, Spring Boot, React; RSocket; OpenAI; PostgreSQL.</li>
-      <li>Erbakır VR — Java SE vision; YOLOv4 + OpenCV.</li>
-      <li>Damlatur — Spring Boot/Security/Hibernate; Caffeine; JMeter.</li>
-      <li>Lojister — Perf improvements; i18n; payments.</li>
-    </ul>
-    <h2>Skills</h2>
-    <p>Java, Spring Boot, JavaEE, Hibernate, Flutter, React, PostgreSQL, MongoDB, Elasticsearch, MySQL, REST, RSocket, JUnit, Mockito, JMeter, Kafka, RabbitMQ, Redis, Caffeine, Lombok, MapStruct, Springdoc, Thymeleaf, MQTT, OpenCV, Zxing, Git, Maven, Docker, Grafana Stack</p>
-    <h2>Education</h2>
-    <p>Necmettin Erbakan University — MIS (2017–2021)</p>
+    <p>Software Developer specialized in Java and Spring Boot with 4+ years building scalable backends and real‑time systems. Founder of Lingol, delivered end‑to‑end across Flutter, React, and Spring Boot. Experience in image processing and ML.</p>
+    <div class="cv-grid">
+  <div class="cv-card">
+        <h2>Experience</h2>
+        <ul>
+          <li><strong>Freelance Developer</strong> — Nov 2023 – Present
+            <ul>
+              <li>Delivered custom solutions including my startup Lingol.</li>
+              <li>Designed secure REST and RSocket APIs; tuned DB performance.</li>
+            </ul>
+          </li>
+          <li><strong>Java Backend Developer, Aselsis A.Ş.</strong> — Jan 2021 – Nov 2023
+            <ul>
+              <li>Led backend architecture, API design, and database modeling.</li>
+              <li>Implemented observability and performance optimizations.</li>
+              <li>Contributed to image processing modules.</li>
+            </ul>
+          </li>
+        </ul>
   </div>
+  <div class="cv-card">
+        <h2>Projects</h2>
+        <ul>
+          <li><strong>Lingol</strong> — Flutter, Spring Boot, React; RSocket; OpenAI; PostgreSQL.</li>
+          <li><strong>Erbakır VR</strong> — Java SE vision; YOLOv4 + OpenCV.</li>
+          <li><strong>Damlatur</strong> — Spring Boot/Security/Hibernate; Caffeine; JMeter.</li>
+          <li><strong>Lojister</strong> — Perf improvements; i18n; payments.</li>
+        </ul>
+      </div>
+  <div class="page-break"></div>
+      <div class="cv-card">
+        <h2>Skills</h2>
+        <div class="kv">
+          <span>Java</span><span>Spring Boot</span><span>Hibernate</span><span>Flutter</span><span>React</span><span>PostgreSQL</span><span>MongoDB</span><span>Elasticsearch</span><span>REST</span><span>RSocket</span><span>JUnit</span><span>JMeter</span><span>Kafka</span><span>RabbitMQ</span><span>Redis</span><span>Docker</span><span>Grafana Stack</span>
+        </div>
+      </div>
+      <div class="cv-card">
+        <h2>Education</h2>
+        <p>Necmettin Erbakan University — MIS (2017–2021)</p>
+      </div>
+    </div>
+  </div>
+  <script>
+  // Auto-open print dialog when ?print=1 is present
+    const params = new URLSearchParams(location.search);
+    if(params.get('ats')==='1'){
+      document.documentElement.classList.add('ats');
+    }
+    if(params.get('print')==='1'){
+      window.addEventListener('load',()=>setTimeout(()=>window.print(),100));
+    }
+  </script>
 </body>
 </html>

@@ -8,8 +8,46 @@
   <link rel="stylesheet" href="../assets/css/light.css" id="light-theme" />
   <link rel="stylesheet" href="../assets/css/dark.css" id="dark-theme" disabled />
   <style>
+    :root{--cv-blue:#2563eb}
     .print{max-width:900px;margin:24px auto;padding:16px}
-    @media print{.btn{display:none}}
+    .cv-header{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start}
+  .contact{display:flex;flex-direction:column;gap:4px;color:var(--muted)}
+    .cv-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    .cv-card{padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--card)}
+    .kv{display:flex;gap:10px;flex-wrap:wrap}
+    .kv span{display:inline-flex;gap:6px;align-items:center;padding:4px 8px;border:1px solid var(--border);border-radius:999px;background:color-mix(in oklab, var(--card) 92%, transparent)}
+    .cv h2{color:var(--cv-blue)}
+    .cv h2:after{display:none}
+    .page-break{display:none}
+    .avatar-cv{display:inline-flex;align-items:center;gap:10px}
+    .avatar-cv img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:1px solid var(--border)}
+    /* ATS modu: renkleri, fotoğrafı ve süs çizgisini kaldır */
+    .ats .cv h2{color:inherit}
+    .ats .cv h2:after{display:none}
+    .ats .avatar-cv{display:none}
+    .ats .kv span{border-color:#bbb}
+    .cv-card{page-break-inside:avoid}
+  @page{size:A4;margin:8mm}
+    @media print{
+      body{background:#fff}
+      .btn{display:none}
+      .card{box-shadow:none;border-color:#999}
+  .print.card{border:0 !important;border-radius:0 !important}
+    .cv-card{border:0 !important}
+    .page-break{display:block;break-after:page;height:0}
+      /* yazdırmada renkleri koru */
+      *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      /* daha sıkı yerleşim: iki sayfaya sığdır */
+    body{font-size:12px;line-height:1.3}
+    .print{max-width:100%;padding:5mm}
+    h1{font-size:20px}
+    .cv h2{font-size:15px;margin:6px 0}
+    .cv-card{padding:8px;margin-bottom:8px}
+  .contact{gap:4px}
+  .kv span{padding:2px 5px;font-size:11px;border:0 !important}
+    ul{margin:6px 0;padding-left:18px}
+    li{margin:2px 0}
+    }
   </style>
   <script src="../assets/js/theme-toggle.js" defer></script>
   <script>document.addEventListener('DOMContentLoaded',()=>{ if(typeof loadSavedTheme==='function') loadSavedTheme(); });</script>
@@ -26,30 +64,123 @@
   <meta name="author" content="Hüdai APA" />
 </head>
 <body>
-  <div class="print card">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-      <h1 style="margin:0">Hüdai APA</h1>
-      <div class="actions"><a class="btn" href="/tr/">← Geri</a><button class="btn" onclick="window.print()">Yazdır</button></div>
+  <div class="print card cv">
+    <div class="cv-header">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="avatar-cv"><img src="../assets/FOTO.jpg" alt="Hüdai APA fotoğrafı" /></div>
+          <div>
+            <h1 style="margin:0">Hüdai APA</h1>
+            <div style="color:var(--muted);font-weight:500">Yazılım Geliştirici</div>
+          </div>
+        </div>
+        <div class="contact" style="margin-top:6px">
+          <span><strong>Konum:</strong> Denizli, Türkiye</span>
+          <span><strong>Mobil:</strong> (+90) 546 681 5952</span>
+          <span><strong>E‑posta:</strong> <a href="mailto:hudaiapa88@gmail.com">hudaiapa88@gmail.com</a></span>
+          <span><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/hudaiapa" target="_blank" rel="noopener">linkedin.com/in/hudaiapa</a></span>
+          <span><strong>GitHub:</strong> <a href="https://github.com/hudaiapa88" target="_blank" rel="noopener">github.com/hudaiapa88</a></span>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="/tr/">← Geri</a>
+        <a class="btn" href="/tr/cv.html?print=1">PDF (Stil)</a>
+  <a class="btn" href="/tr/cv.html?ats=1&print=1">PDF (ATS)</a>
+      </div>
     </div>
-    <p class="muted">Yazılım Geliştirici — Denizli, Türkiye · <a href="mailto:hudaiapa88@gmail.com">hudaiapa88@gmail.com</a> · <a href="https://linkedin.com/in/hudaiapa">linkedin</a></p>
-    <h2>Özet</h2>
-    <p>Java ve Spring Boot’ta uzman, mikroservislerde ölçeklenebilir çözümler geliştiren 4+ yıllık deneyime sahip Yazılım Geliştirici. Lingol’u uçtan uca (Flutter, React, Spring Boot) geliştirdi. Görüntü işleme ve ML deneyimine sahip.</p>
-    <h2>Deneyim</h2>
-    <ul>
-      <li>Serbest Yazılımcı (Kas 2023 – Halen) — Lingol dahil özel çözümler.</li>
-      <li>Java Backend Geliştirici, Aselsis A.Ş. (Oca 2021 – Kas 2023) — Backend mimarisi, API, VT, performans; görüntü işleme.</li>
-    </ul>
-    <h2>Projeler</h2>
-    <ul>
-      <li>Lingol — Flutter, Spring Boot, React; RSocket; OpenAI; PostgreSQL.</li>
-      <li>Erbakır VR — Java SE; YOLOv4 + OpenCV.</li>
-      <li>Damlatur — Spring Boot/Security/Hibernate; Caffeine; JMeter.</li>
-      <li>Lojister — Performans; i18n; ödemeler.</li>
-    </ul>
-    <h2>Yetenekler</h2>
-    <p>Java, Spring Boot, JavaEE, Hibernate, Flutter, React, PostgreSQL, MongoDB, Elasticsearch, MySQL, REST, RSocket, JUnit, Mockito, JMeter, Kafka, RabbitMQ, Redis, Caffeine, Lombok, MapStruct, Springdoc, Thymeleaf, MQTT, OpenCV, Zxing, Git, Maven, Docker, Grafana</p>
-    <h2>Eğitim</h2>
-    <p>Necmettin Erbakan Üniversitesi — YBS (2017–2021)</p>
+    <h2>Profesyonel Özet</h2>
+    <p>Backend teknolojilerinde, özellikle Java ve Spring Boot'ta uzmanlaşmış, çok yönlü bir Yazılım Geliştiricisiyim. Microservice mimarisiyle ölçeklenebilir ve sağlam çözümler geliştirme konusunda 4+ yıllık deneyime sahibim. Kendi girişimim Lingol projesinde tüm süreci baştan sona tek başıma yürüterek hem mobil (Flutter) hem de frontend (React) geliştirme becerilerimi kanıtladım. Görüntü işleme ve makine öğrenimi alanındaki tecrübemle, karmaşık problemleri çözmek için yenilikçi yaklaşımlar sergiliyorum.</p>
+    <div class="cv-grid">
+      <div class="cv-card">
+        <h2>İş Deneyimi</h2>
+        <ul>
+          <li><strong>Serbest Yazılımcı — Denizli, Türkiye</strong> — Kasım 2023 – Halen
+            <ul>
+              <li>Kendi girişimim Lingol dahil olmak üzere, müşterilerimin ihtiyaçlarına özel çözümler geliştirdim.</li>
+              <li>Projelerde en güncel teknolojilerle yüksek verimli ve ölçeklenebilir sistemler oluşturdum.</li>
+            </ul>
+          </li>
+          <li><strong>Java Backend Geliştirici — Aselsis A.Ş. (Yerinde)</strong> — Ocak 2021 – Kasım 2023
+            <ul>
+              <li>Başlangıçtan teslimata kadar birçok büyük projede aktif rol aldım.</li>
+              <li>Java backend geliştirme ve görüntü işleme uzmanı olarak görev yaptım.</li>
+              <li>Backend mimarisi, API geliştirme, veritabanı yönetimi ve performans optimizasyonuna odaklandım.</li>
+            </ul>
+          </li>
+        </ul>
   </div>
+  <div class="cv-card">
+        <h2>Seçilmiş Projeler</h2>
+        <ul>
+          <li><strong>Lingol — Kendi Girişimim Olan Dil Öğrenme Uygulaması</strong>
+            <ul>
+              <li>Google Play: <a href="https://play.google.com/store/apps/details?id=com.uc.lingol" target="_blank" rel="noopener">play.google.com/store/apps/details?id=com.uc.lingol</a></li>
+              <li>Tüm mobil (Flutter, Nylo Framework) ve backend (Spring Boot) geliştirmeyi üstlendim; admin panelini React ile geliştirdim.</li>
+              <li>RSocket ile gerçek zamanlı çok oyunculu etkileşimler sağlayan oyun modülü entegre ettim.</li>
+              <li>Kullanıcı kimlik doğrulama, oyun istatistikleri ve kişiselleştirilmiş dil analizi için OpenAI API entegrasyonları yaptım.</li>
+              <li>Veri tutarlılığı ve performans için PostgreSQL tabanlı veritabanı mimarisi tasarladım.</li>
+            </ul>
+          </li>
+          <li><strong>Erbakır VR — Kalite Kontrol Sistemi</strong>
+            <ul>
+              <li>Java SE tabanlı gerçek zamanlı görüntü işleme çözümü geliştirdim.</li>
+              <li>Paketleme hatalarını tespit etmek için YOLOv4 modellerini Python ve OpenCV ile eğittim.</li>
+            </ul>
+          </li>
+          <li><strong>Damlatur — Tur Şirketi İçin Planlama ve Rota Uygulaması</strong>
+            <ul>
+              <li>Spring Boot, Spring Security ve Hibernate ile backend mimarisini tasarladım.</li>
+              <li>Veri erişimini hızlandırmak için Caffeine Cache kullandım.</li>
+              <li>JMeter ile API performans testleri yaparak sistemi doğruladım.</li>
+            </ul>
+          </li>
+          <li><strong>Lojister — Nakliye Uygulaması</strong>
+            <ul>
+              <li>Mevcut kod tabanında performans iyileştirmeleri ve sorgu optimizasyonları yaptım.</li>
+              <li>Uluslararası kullanım için i18n altyapısı ekledim.</li>
+              <li>iyzico, Halkbank ve TEB ödeme API'lerini entegre ettim.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+  <div class="page-break"></div>
+      <div class="cv-card">
+        <h2>Teknik Yetenekler</h2>
+        <ul>
+          <li><strong>Programlama Dilleri:</strong> Java, JavaScript, Dart, Python</li>
+          <li><strong>Frameworkler:</strong> Spring Boot, JavaEE, JavaSE, Hibernate ORM, Flutter, React, JavaFX</li>
+          <li><strong>Mimariler:</strong> Design Pattern, Layered Architecture, Microservice</li>
+          <li><strong>Veritabanı:</strong> PostgreSQL, MongoDB, Elasticsearch, MySQL</li>
+          <li><strong>Web Servisleri:</strong> REST, RSocket</li>
+          <li><strong>Test:</strong> JUnit, Mockito, Rest Assured, JMeter</li>
+          <li><strong>Mesaj Kuyruğu:</strong> Kafka, RabbitMQ</li>
+          <li><strong>Önbellek:</strong> Redis, Caffeine</li>
+          <li><strong>Kütüphaneler:</strong> Lombok, MapStruct, springdoc-openapi, Thymeleaf, Apache Commons, MQTT, OpenCV, ZXing</li>
+          <li><strong>Araçlar:</strong> Git, Maven, Jira, Docker, Observability (Grafana, Loki, Tempo, Prometheus)</li>
+        </ul>
+      </div>
+      <div class="cv-card">
+        <h2>Diller</h2>
+        <ul>
+          <li>Türkçe — Ana Dil</li>
+          <li>İngilizce — Orta Seviye (B1)</li>
+        </ul>
+      </div>
+      <div class="cv-card">
+        <h2>Eğitim</h2>
+        <p>Necmettin Erbakan Üniversitesi — YBS (2017–2021)</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    // ?print=1 ise yazdır penceresini aç, ?ats=1 ise ATS modunu etkinleştir
+    const params = new URLSearchParams(location.search);
+    if(params.get('ats')==='1'){
+      document.documentElement.classList.add('ats');
+    }
+    if(params.get('print')==='1'){
+      window.addEventListener('load',()=>setTimeout(()=>window.print(),100));
+    }
+  </script>
 </body>
 </html>

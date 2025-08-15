@@ -45,7 +45,7 @@
 </head>
 <body>
             <header class="site-header">
-                <div class="hero container reveal">
+                <div class="hero minimal container reveal">
                     <nav class="topbar">
                         <a href="/en/" class="brand">Hüdai APA</a>
                         <button class="menu-toggle" id="menu-toggle" aria-label="Menu" title="Menu">
@@ -64,9 +64,9 @@
                     </nav>
                     <div class="hero-body">
                         <div class="hero-text">
-                            <span class="kicker">Open to opportunities</span>
-                            <h1 class="gradient-text">Software Developer</h1>
-                            <p class="muted">Building reliable backends and delightful apps — Java & Spring Boot, Microservices, Flutter, React, ML</p>
+                            <h1>Hüdai APA</h1>
+                            <h2>Software Developer</h2>
+                            <p>Java & Spring Boot · Microservices · Flutter · React · ML</p>
                             <div class="quick-contacts">
                                 <a class="btn primary" href="mailto:hudaiapa88@gmail.com">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -81,7 +81,7 @@
                                     GitHub
                                 </a>
                                   <a class="btn" href="#projects">View Projects ↓</a>
-                                  <a class="btn" href="/en/cv.html" rel="noopener">Download CV</a>
+                                  <a class="btn" href="/en/cv.html?print=1" rel="noopener">Download PDF</a>
                             </div>
                         </div>
                         <div class="hero-photo reveal">
@@ -90,26 +90,7 @@
                             </span>
                         </div>
                     </div>
-                    <svg class="hero-bg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-                        <defs>
-                            <linearGradient id="h-grad1" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="var(--primary)"/>
-                                <stop offset="100%" stop-color="var(--accent)"/>
-                            </linearGradient>
-                            <linearGradient id="h-grad2" x1="1" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stop-color="var(--accent)"/>
-                                <stop offset="100%" stop-color="var(--primary)"/>
-                            </linearGradient>
-                        </defs>
-                        <g class="layer l1" opacity="0.8">
-                            <path d="M0,300 C220,220 380,360 620,300 C900,220 1080,330 1200,260 L1200,400 L0,400 Z" fill="url(#h-grad1)"/>
-                            <path d="M0,280 C180,200 420,340 700,280 C900,240 1040,300 1200,240 L1200,400 L0,400 Z" fill="url(#h-grad2)" opacity=".7"/>
-                        </g>
-                        <g class="layer l2" opacity="0.5">
-                            <circle class="dot" cx="180" cy="320" r="120" fill="url(#h-grad1)"/>
-                            <circle class="dot" cx="980" cy="300" r="100" fill="url(#h-grad2)"/>
-                        </g>
-                    </svg>
+                    
                 </div>
                 
             </header>
@@ -119,7 +100,7 @@
                 <div class="features">
                     <div class="feature-card reveal">
                         <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20l9-5-9-5-9 5 9 5z"/><path d="M12 12l9-5-9-5-9 5 9 5z"/></svg></div>
-                        <div><h3>Microservices</h3><p>Resilient services, observability and clean APIs</p></div>
+                        <div><h3>Backend</h3><p>Secure REST/RSocket APIs, data modeling and performance</p></div>
                     </div>
                     <div class="feature-card reveal">
                         <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8"/></svg></div>
@@ -132,7 +113,7 @@
                 </div>
                 <div class="stats-card reveal" style="margin-top:12px">
                     <div class="stat"><span class="counter" data-to="4">0</span><label>Years Experience</label></div>
-                    <div class="stat"><span class="counter" data-to="12">0</span><label>Projects</label></div>
+                    <div class="stat"><span class="counter" data-to="4">0</span><label>Projects</label></div>
                 </div>
                 <div class="tech-marquee reveal" aria-label="Technologies">
                     <div class="tech-track">
@@ -154,9 +135,37 @@
             </div>
         </section>
 
-        <main class="container">
-            <section id="about" class="section reveal"><div class="card"><div id="about-placeholder" class="fade-in"></div></div></section>
-            <section id="experience" class="section reveal"><div id="experience-placeholder" class="fade-in"></div></section>
+                <main class="container">
+                        <section id="about" class="section reveal"><div class="card"><div class="fade-in">
+<div>
+    <h2>About</h2>
+    <p>I’m a versatile Software Developer specialized in Java and Spring Boot with 4+ years building scalable microservices. I led my own startup project Lingol end‑to‑end across mobile (Flutter), frontend (React), and backend (Spring Boot). I also apply image processing and ML to deliver robust, innovative solutions.</p>
+    <ul>
+        <li>Backend: Java, Spring Boot, Microservices, Hibernate</li>
+        <li>Frontend & Mobile: React, Flutter</li>
+        <li>ML & Vision: OpenCV, YOLO</li>
+    </ul>
+</div>
+                                </div></div></section>
+                        <section id="experience" class="section reveal"><div class="card"><div class="fade-in">
+<div>
+    <h2>Experience</h2>
+    <div class="timeline">
+        <div class="tl-item card reveal">
+            <span class="tl-dot"></span>
+            <h3>Freelance Developer</h3>
+            <p class="muted">Denizli, Turkey · Nov 2023 – Present</p>
+            <p>Delivered custom solutions including my own venture Lingol using modern stacks and best practices.</p>
+        </div>
+        <div class="tl-item card reveal">
+            <span class="tl-dot"></span>
+            <h3>Java Backend Developer · Aselsis A.Ş.</h3>
+            <p class="muted">On-site · Jan 2021 – Nov 2023</p>
+            <p>Owned backend architecture, APIs, databases, and performance optimization. Worked on image processing modules.</p>
+        </div>
+    </div>
+</div>
+                                </div></div></section>
                         <section id="projects" class="section reveal">
                                 <div class="card">
                                         <div id="projects-placeholder" class="fade-in">
@@ -165,7 +174,7 @@
                                                     <h2>Projects</h2>
                                                     <div class="cards">
                                                     <div class="card">
-                                                        <h3>Lingol · Language Learning App</h3>
+                                                        <h3>Lingol · Language Learning App <span class="label founder">My Startup</span></h3>
                                                         <p>Flutter (mobile) + Spring Boot (backend) + React (admin). Real‑time multiplayer with RSocket. OpenAI for auth, stats, and personalized analysis. PostgreSQL architecture for consistency and performance.</p>
                                                         <p><a class="btn" href="https://play.google.com/store/apps/details?id=com.uc.lingol" target="_blank" rel="noopener">Google Play</a></p>
                                                         <div class="badges">
@@ -176,7 +185,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card">
-                                                        <h3>Erbakır VR · Quality Control</h3>
+                                                        <h3>Erbakır VR · Quality Control <span class="label aselsis">Aselsis</span></h3>
                                                         <p>Java SE real‑time vision solution. Trained YOLOv4 models with Python + OpenCV to detect packaging errors.</p>
                                                         <div class="badges">
                                                             <span class="badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l9 4.9v9.8L12 22 3 16.7V6.9L12 2z"/></svg>Java SE</span>
@@ -185,7 +194,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card">
-                                                        <h3>Damlatur · Planning & Routing</h3>
+                                                        <h3>Damlatur · Planning & Routing <span class="label aselsis">Aselsis</span></h3>
                                                         <p>Spring Boot, Security, Hibernate backend. Caffeine Cache, and JMeter for performance validation.</p>
                                                         <div class="badges">
                                                             <span class="badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l9 4.9v9.8L12 22 3 16.7V6.9L12 2z"/></svg>Spring</span>
@@ -194,7 +203,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="card">
-                                                        <h3>Lojister · Transportation</h3>
+                                                        <h3>Lojister · Transportation <span class="label aselsis">Aselsis</span></h3>
                                                         <p>Performance improvements, query optimization, i18n support, and payment integrations (iyzico, Halkbank, TEB).</p>
                                                         <div class="badges">
                                                             <span class="badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 12h20"/></svg>i18n</span>
@@ -207,7 +216,23 @@
                                         </div>
                                 </div>
                         </section>
-            <section id="skills" class="section reveal"><div class="card"><div id="skills-placeholder" class="fade-in"></div></div></section>
+                        <section id="skills" class="section reveal"><div class="card"><div class="fade-in">
+<div>
+    <h2>Skills</h2>
+    <ul>
+        <li><strong>Languages:</strong> Java, JavaScript, Dart, Python</li>
+        <li><strong>Frameworks:</strong> Spring Boot, JavaEE, JavaSE, Hibernate ORM, Flutter, React, JavaFX</li>
+        <li><strong>Architectures:</strong> Design Patterns, Layered, Microservice</li>
+        <li><strong>Databases:</strong> PostgreSQL, MongoDB, Elasticsearch, MySQL</li>
+        <li><strong>Services:</strong> REST, RSocket</li>
+        <li><strong>Testing:</strong> JUnit, Mockito, Rest Assured, JMeter</li>
+        <li><strong>Messaging:</strong> Kafka, RabbitMQ</li>
+        <li><strong>Cache:</strong> Redis, Caffeine</li>
+        <li><strong>Libraries:</strong> Lombok, MapStruct, Springdoc, Thymeleaf, Apache Commons, MQTT, OpenCV, Zxing</li>
+        <li><strong>Tools:</strong> Git, Maven, Jira, Docker, Grafana Stack</li>
+    </ul>
+</div>
+                                </div></div></section>
         </main>
     
             <footer>
@@ -223,40 +248,18 @@
 
         <script src="../assets/js/main.js" defer></script>
         <script src="../assets/js/theme-toggle.js" defer></script>
-        <script src="../assets/js/i18n.js" defer></script>
         <script>
-                    (function(){
-                localStorage.setItem('lang','en');
-                        function load(elId, path){
-                            return fetch(path).then(function(r){
-                                if(!r.ok) throw new Error(path+" -> "+r.status);
-                                return r.text();
-                            }).then(function(html){
-                                const el=document.getElementById(elId);
-                                if(el) el.innerHTML=html;
-                            }).catch(function(err){
-                                console.error('Load error:', err);
-                                const el=document.getElementById(elId);
-                                if(el && !el.innerHTML){ el.innerHTML = '<p class="muted">Content could not be loaded.</p>'; }
-                            });
-                }
-                document.addEventListener('DOMContentLoaded', function(){
-                    Promise.all([
-                                load('about-placeholder','../components/en/sections/about.html'),
-                                load('experience-placeholder','../components/en/sections/experience.html'),
-                                load('projects-placeholder','../components/en/sections/projects.html'),
-                                load('skills-placeholder','../components/en/sections/skills.html')
-                    ]).then(function(){
-                        if (typeof loadSavedTheme === 'function') loadSavedTheme();
-                        if (typeof window.rescanReveal === 'function') window.rescanReveal();
-                        // mobile menu toggle if present
-                        var mt = document.getElementById('menu-toggle');
-                        var nl = document.getElementById('nav-links');
-                        if(mt && nl){ mt.addEventListener('click', function(){ nl.classList.toggle('open'); }); }
-                        var y = document.getElementById('year'); if(y){ y.textContent = new Date().getFullYear(); }
-                    });
-                });
-            })();
+        (function(){
+            localStorage.setItem('lang','en');
+            document.addEventListener('DOMContentLoaded', function(){
+                if (typeof loadSavedTheme === 'function') loadSavedTheme();
+                if (typeof window.rescanReveal === 'function') window.rescanReveal();
+                var mt = document.getElementById('menu-toggle');
+                var nl = document.getElementById('nav-links');
+                if(mt && nl){ mt.addEventListener('click', function(){ nl.classList.toggle('open'); }); }
+                var y = document.getElementById('year'); if(y){ y.textContent = new Date().getFullYear(); }
+            });
+        })();
         </script>
 </body>
 </html>

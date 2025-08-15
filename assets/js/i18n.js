@@ -4,7 +4,7 @@ const i18n = {
     en: {
         about: {
             title: "About Me",
-            content: "I am a versatile Software Developer specializing in backend technologies, particularly in Java and Spring Boot. With over 4 years of experience in developing scalable and robust solutions using microservice architecture, I have proven my skills in both mobile (Flutter) and frontend (React) development through my own venture, the Lingol project."
+            content: "I am a versatile Software Developer specializing in backend technologies, particularly in Java and Spring Boot. With over 4 years of experience in developing scalable and robust solutions, I have proven my skills in both mobile (Flutter) and frontend (React) development through my own venture, the Lingol project."
         },
         experience: {
             title: "Experience",

@@ -8,7 +8,7 @@
     "linkedin": "https://linkedin.com/in/hudaiapa",
     "github": "https://github.com/hudaiapa88"
   },
-  "professional_summary": "I am a versatile Software Developer specializing in backend technologies, particularly in Java and Spring Boot. With over 4 years of experience in developing scalable and robust solutions using microservice architecture, I have demonstrated my skills in both mobile (Flutter) and frontend (React) development by managing the entire process of my own startup project, Lingol. My experience in image processing and machine learning allows me to showcase innovative approaches to solving complex problems.",
+  "professional_summary": "I am a versatile Software Developer specializing in backend technologies, particularly in Java and Spring Boot. With over 4 years of experience in developing scalable and robust solutions, I have demonstrated my skills in both mobile (Flutter) and frontend (React) development by managing the entire process of my own startup project, Lingol. My experience in image processing and machine learning allows me to showcase innovative approaches to solving complex problems.",
   "experience": [
     {
       "title": "Freelance Developer",
@@ -108,8 +108,7 @@
     ],
     "architectures": [
       "Design Pattern",
-      "Layered Architecture",
-      "Microservice"
+      "Layered Architecture"
     ],
     "databases": [
       "PostgreSQL",

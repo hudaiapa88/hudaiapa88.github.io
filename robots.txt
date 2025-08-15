@@ -1,0 +1,7 @@
+# Robots policy for hudaiapa88.github.io
+User-agent: *
+Allow: /
+
+# Root is excluded from indexing via meta robots in /index.html
+
+Sitemap: https://hudaiapa88.github.io/sitemap.xml

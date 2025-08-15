@@ -1,50 +1,58 @@
-// Main JavaScript logic for the portfolio website
-
-// Function to initialize the portfolio
-function initPortfolio() {
-    // Load the appropriate content based on the selected language
-    loadContent();
-
-    // Set up event listeners for theme toggle
-    setupThemeToggle();
-}
-
-// Function to load content based on the selected language
-function loadContent() {
-    // Logic to fetch and display content from JSON files
-    // This will be implemented in i18n.js
-}
-
-// Function to set up theme toggle functionality
-function setupThemeToggle() {
-    const themeToggleButton = document.getElementById('theme-toggle');
-    themeToggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        document.body.classList.toggle('light-theme');
-        // Save the current theme preference in local storage
-        saveThemePreference();
-    });
-}
-
-// Function to save the theme preference in local storage
-function saveThemePreference() {
-    const currentTheme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
-    localStorage.setItem('theme', currentTheme);
-}
-
-// Function to load the saved theme preference on page load
-function loadSavedTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.body.classList.add(savedTheme + '-theme');
-    } else {
-        // Default to light theme
-        document.body.classList.add('light-theme');
+// Main JS bootstrap: scroll reveal
+document.addEventListener('DOMContentLoaded', function(){
+    const observer = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+            if(e.isIntersecting){
+                e.target.classList.add('revealed');
+                observer.unobserve(e.target);
+            }
+        })
+    }, {threshold: 0.12});
+    function rescanReveal(){
+        document.querySelectorAll('.reveal, .fade-in').forEach(el=>{
+            if(!el.__observed){ observer.observe(el); el.__observed = true; }
+        });
     }
-}
+    rescanReveal();
+    // expose for dynamic content
+    window.rescanReveal = rescanReveal;
 
-// Initialize the portfolio when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
-    loadSavedTheme();
-    initPortfolio();
+    // Scrollspy: highlight nav link matching current section
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    const links = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+    function setActive(){
+        const y = window.scrollY + 120; // offset for header
+        let current = sections[0]?.id;
+        sections.forEach(s=>{ if (s.offsetTop <= y) current = s.id; });
+        links.forEach(a=>{
+            const hash = a.getAttribute('href').replace('#','');
+            a.classList.toggle('active', hash === current);
+        });
+    }
+    setActive();
+    window.addEventListener('scroll', setActive, {passive:true});
+
+    // Animated counters
+    function initCounters(){
+        const counters = document.querySelectorAll('.counter');
+        const io = new IntersectionObserver((entries)=>{
+            entries.forEach(entry=>{
+                if(entry.isIntersecting){
+                    const el = entry.target;
+                    const to = parseInt(el.getAttribute('data-to')||'0',10);
+                    const dur = 1200;
+                    const start = performance.now();
+                    function tick(now){
+                        const p = Math.min(1, (now - start) / dur);
+                        el.textContent = Math.floor(to * (0.2 + 0.8 * p)).toString();
+                        if(p < 1) requestAnimationFrame(tick);
+                    }
+                    requestAnimationFrame(tick);
+                    io.unobserve(el);
+                }
+            });
+        }, {threshold: 0.4});
+        counters.forEach(c=>io.observe(c));
+    }
+    initCounters();
 });

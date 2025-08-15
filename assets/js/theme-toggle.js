@@ -1,13 +1,38 @@
-// This file contains the logic for toggling between light and dark themes.
+// Robust theme toggle: works even if header isn't loaded yet
+(function(){
+    function applyTheme(theme){
+        document.body.classList.toggle('light', theme === 'light');
+        document.body.classList.toggle('dark', theme === 'dark');
+        // Optional: if separate CSS files are used with ids
+        var darkLink = document.getElementById('dark-theme');
+        var lightLink = document.getElementById('light-theme');
+        if (darkLink && lightLink){
+            darkLink.disabled = (theme !== 'dark');
+            lightLink.disabled = (theme !== 'light');
+        }
+    }
 
-const themeToggleButton = document.getElementById('theme-toggle');
-const currentTheme = localStorage.getItem('theme') || 'light';
+    window.loadSavedTheme = function(){
+        var saved = localStorage.getItem('theme') || 'light';
+        applyTheme(saved);
+    }
 
-document.body.classList.add(currentTheme);
+    function setup(){
+        var btn = document.getElementById('theme-toggle');
+        if (btn){
+            btn.addEventListener('click', function(){
+                var now = document.body.classList.contains('dark') ? 'light' : 'dark';
+                localStorage.setItem('theme', now);
+                applyTheme(now);
+            });
+        } else {
+            // Try again after components load
+            setTimeout(setup, 300);
+        }
+    }
 
-themeToggleButton.addEventListener('click', () => {
-    const newTheme = document.body.classList.contains('light') ? 'dark' : 'light';
-    document.body.classList.toggle('light', newTheme === 'light');
-    document.body.classList.toggle('dark', newTheme === 'dark');
-    localStorage.setItem('theme', newTheme);
-});
+    document.addEventListener('DOMContentLoaded', function(){
+        window.loadSavedTheme();
+        setup();
+    });
+})();

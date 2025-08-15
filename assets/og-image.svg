@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6d28d9"/>
+      <stop offset="100%" stop-color="#14b8a6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0b0f17"/>
+  <circle cx="1050" cy="100" r="180" fill="url(#g)" opacity="0.4"/>
+  <circle cx="180" cy="540" r="220" fill="url(#g)" opacity="0.35"/>
+  <text x="80" y="200" fill="#e5e7eb" font-size="64" font-family="Segoe UI, Roboto, Arial, sans-serif" font-weight="800">Hüdai APA</text>
+  <text x="80" y="270" fill="#cbd5e1" font-size="36" font-family="Segoe UI, Roboto, Arial, sans-serif">Java &amp; Spring Boot • Microservices • Flutter • React</text>
+  <rect x="80" y="320" width="560" height="3" fill="url(#g)" rx="2"/>
+  <text x="80" y="380" fill="#94a3b8" font-size="28" font-family="Segoe UI, Roboto, Arial, sans-serif">ML &amp; Image Processing • OpenCV • YOLO • PostgreSQL • Kafka • Docker</text>
+  <text x="80" y="460" fill="#94a3b8" font-size="24" font-family="Segoe UI, Roboto, Arial, sans-serif">hudaiapa88.github.io</text>
+</svg>

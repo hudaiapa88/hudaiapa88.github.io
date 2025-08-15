@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hüdai APA - Portfolio</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/light.css" id="light-theme">
+    <link rel="stylesheet" href="../assets/css/dark.css" id="dark-theme" disabled>
+    <link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+<body>
+    <header>
+        <!-- Include header component -->
+        <div id="header-placeholder"></div>
+    </header>
+    
+    <main>
+        <!-- Include sections -->
+        <div id="about-placeholder"></div>
+        <div id="experience-placeholder"></div>
+        <div id="projects-placeholder"></div>
+        <div id="skills-placeholder"></div>
+    </main>
+    
+    <footer>
+        <!-- Include footer component -->
+        <div id="footer-placeholder"></div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/theme-toggle.js"></script>
+    <script src="../assets/js/i18n.js"></script>
+    <script>
+        // Load components dynamically
+        document.getElementById('header-placeholder').innerHTML = await (await fetch('../components/header.html')).text();
+        document.getElementById('footer-placeholder').innerHTML = await (await fetch('../components/footer.html')).text();
+        document.getElementById('about-placeholder').innerHTML = await (await fetch('../components/sections/about.html')).text();
+        document.getElementById('experience-placeholder').innerHTML = await (await fetch('../components/sections/experience.html')).text();
+        document.getElementById('projects-placeholder').innerHTML = await (await fetch('../components/sections/projects.html')).text();
+        document.getElementById('skills-placeholder').innerHTML = await (await fetch('../components/sections/skills.html')).text();
+    </script>
+</body>
+</html>

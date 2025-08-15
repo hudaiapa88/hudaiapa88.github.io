@@ -1,0 +1,94 @@
+{
+  "about": {
+    "title": "Hakkında",
+    "summary": "Backend teknolojilerinde, özellikle Java ve Spring Boot'ta uzmanlaşmış, çok yönlü bir Yazılım Geliştiricisiyim. Microservice mimarisini kullanarak ölçeklenebilir ve sağlam çözümler geliştirme konusunda 4 yılı aşkın deneyime sahibim."
+  },
+  "experience": {
+    "title": "İş Deneyimi",
+    "freelancer": {
+      "position": "Serbest Yazılımcı",
+      "location": "Denizli, Türkiye",
+      "duration": "Kasım 2023 - Halen",
+      "description": "Kendi girişimim olan Lingol dahil olmak üzere, müşterilerimin ihtiyaçlarına özel çözümler geliştirdim."
+    },
+    "java_developer": {
+      "position": "Java Backend Geliştirici",
+      "company": "Aselsis A.Ş.",
+      "location": "Yerinde",
+      "duration": "Ocak 2021 - Kasım 2023",
+      "description": "Başlangıçtan teslimata kadar birçok büyük projede aktif rol aldım."
+    }
+  },
+  "projects": {
+    "title": "Projeler",
+    "lingol": {
+      "name": "Lingol",
+      "description": "Kendi Girişimim Olan Dil Öğrenme Uygulaması",
+      "google_play_link": "https://play.google.com/store/apps/details?id=com.uc.lingol"
+    },
+    "erbakir_vr": {
+      "name": "Erbakır VR",
+      "description": "Kalite Kontrol Sistemi"
+    },
+    "damlatur": {
+      "name": "Damlatur",
+      "description": "Tur Şirketi İçin Planlama ve Rota Belirleme Uygulaması"
+    },
+    "lojister": {
+      "name": "Lojister",
+      "description": "Nakliye Uygulaması"
+    }
+  },
+  "skills": {
+    "title": "Yetenekler",
+    "programming_languages": [
+      "Java",
+      "JavaScript",
+      "Dart",
+      "Python"
+    ],
+    "frameworks": [
+      "Spring Boot",
+      "JavaEE",
+      "JavaSE",
+      "Hibernate ORM",
+      "Flutter",
+      "React",
+      "JavaFX"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "MongoDB",
+      "Elasticsearch",
+      "MySQL"
+    ],
+    "web_services": [
+      "Rest-Restful",
+      "RSocket"
+    ],
+    "testing": [
+      "Junit",
+      "Mockito",
+      "Rest Assured",
+      "JMeter"
+    ],
+    "message_queues": [
+      "Kafka",
+      "RabbitMQ"
+    ],
+    "caching": [
+      "Redis",
+      "Caffeine"
+    ],
+    "libraries": [
+      "Lombok",
+      "MapStruct",
+      "Springdoc-Openapi",
+      "Thymeleaf",
+      "Apache Commons",
+      "MQTT",
+      "OpenCV",
+      "Zxing"
+    ]
+  }
+}

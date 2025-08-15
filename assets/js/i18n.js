@@ -25,7 +25,7 @@ const i18n = {
     tr: {
         about: {
             title: "Hakkımda",
-            content: "Ben, özellikle Java ve Spring Boot'ta uzmanlaşmış çok yönlü bir Yazılım Geliştiricisiyim. Microservice mimarisini kullanarak ölçeklenebilir ve sağlam çözümler geliştirme konusunda 4 yılı aşkın deneyime sahibim. Kendi girişimim olan Lingol projesinde hem mobil (Flutter) hem de frontend (React) geliştirme becerilerimi kanıtladım."
+            content: "Ben, özellikle Java ve Spring Boot'ta uzmanlaşmış çok yönlü bir Yazılım Geliştiricisiyim. Ölçeklenebilir ve sağlam çözümler geliştirme konusunda 4 yılı aşkın deneyime sahibim. Kendi girişimim olan Lingol projesinde hem mobil (Flutter) hem de frontend (React) geliştirme becerilerimi kanıtladım."
         },
         experience: {
             title: "Deneyim",

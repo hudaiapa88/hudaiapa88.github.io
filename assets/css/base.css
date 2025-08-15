@@ -105,8 +105,9 @@ footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted)}
 .splash a.btn{min-width:110px}
 
 /* Responsive navigation */
-.menu-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--border);border-radius:10px;background:var(--card)}
-.menu-toggle svg{width:22px;height:22px}
+.menu-toggle{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text)}
+.menu-toggle svg{width:22px;height:22px;stroke:currentColor}
+.menu-toggle:focus-visible{outline:2px solid color-mix(in oklab, var(--primary) 60%, transparent);outline-offset:2px}
 .nav-links{position:relative}
 @media (min-width: 821px){
     /* Hide hamburger on desktop */

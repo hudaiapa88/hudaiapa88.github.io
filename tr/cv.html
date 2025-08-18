@@ -31,6 +31,9 @@
     @media print{
       body{background:#fff}
       .btn{display:none}
+      #city-select{display:none !important}
+      #city-select + label{display:none !important}
+      label[for="city-select"]{display:none !important}
       .card{box-shadow:none;border-color:#999}
   .print.card{border:0 !important;border-radius:0 !important}
     .cv-card{border:0 !important}
@@ -75,7 +78,7 @@
           </div>
         </div>
         <div class="contact" style="margin-top:6px">
-          <span><strong>Konum:</strong> Denizli, Türkiye</span>
+          <span id="location-text"><strong>Konum:</strong> Denizli, Türkiye</span>
           <span><strong>Mobil:</strong> (+90) 546 681 5952</span>
           <span><strong>E‑posta:</strong> <a href="mailto:hudaiapa88@gmail.com">hudaiapa88@gmail.com</a></span>
           <span><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/hudai-apa/" target="_blank" rel="noopener">linkedin.com/in/hudai-apa</a></span>
@@ -83,24 +86,32 @@
         </div>
       </div>
     <div class="actions">
+        <div style="margin-bottom:8px">
+          <label for="city-select" style="font-size:12px;color:var(--muted)">Hedef Şehir:</label>
+          <select id="city-select" style="margin-left:6px;padding:2px 6px;border:1px solid var(--border);border-radius:4px;background:var(--card);color:var(--text)">
+            <option value="default">Mevcut (Denizli)</option>
+            <option value="istanbul">İstanbul</option>
+            <option value="ankara">Ankara</option>
+          </select>
+        </div>
         <a class="btn" href="/tr/">← Geri</a>
         <a class="btn" href="/tr/cv.html?print=1">PDF (Stil)</a>
   <a class="btn" href="/tr/cv.html?ats=1&print=1">PDF (ATS)</a>
       </div>
     </div>
     <h2>Profesyonel Özet</h2>
-  <p>Backend teknolojilerinde, özellikle Java ve Spring Boot'ta uzmanlaşmış, çok yönlü bir Yazılım Geliştiricisiyim. Ölçeklenebilir ve sağlam çözümler geliştirme konusunda 4+ yıllık deneyime sahibim. Kendi girişimim Lingol projesinde tüm süreci baştan sona tek başıma yürüterek hem mobil (Flutter) hem de frontend (React) geliştirme becerilerimi kanıtladım. Görüntü işleme ve makine öğrenimi alanındaki tecrübemle, karmaşık problemleri çözmek için yenilikçi yaklaşımlar sergiliyorum.</p>
+  <p id="summary-text">Backend teknolojilerinde, özellikle Java ve Spring Boot'ta uzmanlaşmış, çok yönlü bir Yazılım Geliştiricisiyim. Ölçeklenebilir ve sağlam çözümler geliştirme konusunda 4+ yıllık deneyime sahibim. Kendi girişimim Lingol projesinde tüm süreci baştan sona tek başıma yürüterek hem mobil (Flutter) hem de frontend (React) geliştirme becerilerimi kanıtladım. Görüntü işleme ve makine öğrenimi alanındaki tecrübemle, karmaşık problemleri çözmek için yenilikçi yaklaşımlar sergiliyorum.</p>
     <div class="cv-grid">
       <div class="cv-card">
         <h2>İş Deneyimi</h2>
-        <ul>
-          <li><strong>Serbest Yazılımcı — Denizli, Türkiye</strong> — Kasım 2023 – Halen
+        <ul id="experience-list">
+          <li><strong>Serbest Yazılımcı</strong> — Kasım 2023 – Halen
             <ul>
               <li>Kendi girişimim Lingol dahil olmak üzere, müşterilerimin ihtiyaçlarına özel çözümler geliştirdim.</li>
               <li>Projelerde en güncel teknolojilerle yüksek verimli ve ölçeklenebilir sistemler oluşturdum.</li>
             </ul>
           </li>
-          <li><strong>Java Backend Geliştirici — Aselsis A.Ş. (Yerinde)</strong> — Ocak 2021 – Kasım 2023
+          <li><strong>Java Backend Geliştirici — Aselsis A.Ş., Yerinde, Denizli</strong> — Ocak 2021 – Kasım 2023
             <ul>
               <li>Başlangıçtan teslimata kadar birçok büyük projede aktif rol aldım.</li>
               <li>Java backend geliştirme ve görüntü işleme uzmanı olarak görev yaptım.</li>
@@ -181,6 +192,54 @@
     if(params.get('print')==='1'){
       window.addEventListener('load',()=>setTimeout(()=>window.print(),100));
     }
+
+    // Şehir seçici fonksiyonalitesi
+    const citySelect = document.getElementById('city-select');
+    const locationText = document.getElementById('location-text');
+    const summaryText = document.getElementById('summary-text');
+    const experienceList = document.getElementById('experience-list');
+
+    const cityContent = {
+      default: {
+        location: '<strong>Konum:</strong> Denizli, Türkiye'
+      },
+      istanbul: {
+        location: '<strong>Konum:</strong> İstanbul, Türkiye'
+      },
+      ankara: {
+        location: '<strong>Konum:</strong> Ankara, Türkiye'
+      }
+    };
+
+    // URL'den city parametresini oku ve dropdown'ı ayarla
+    const urlParams = new URLSearchParams(location.search);
+    const cityParam = urlParams.get('city');
+    if (cityParam && cityContent[cityParam]) {
+      citySelect.value = cityParam;
+      locationText.innerHTML = cityContent[cityParam].location;
+    }
+
+    citySelect.addEventListener('change', function() {
+      const selectedCity = this.value;
+      const content = cityContent[selectedCity];
+      
+      if (content) {
+        locationText.innerHTML = content.location;
+        // Summary ve Experience sabit kalıyor - değişmiyor
+      }
+    });
+
+    // PDF butonlarını güncelle - seçili şehri URL'ye ekle
+    const pdfButtons = document.querySelectorAll('.actions a[href*="print=1"]');
+    pdfButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const selectedCity = citySelect.value;
+        const currentUrl = this.href;
+        const newUrl = currentUrl + (selectedCity !== 'default' ? '&city=' + selectedCity : '');
+        window.location.href = newUrl;
+      });
+    });
   </script>
 </body>
 </html>

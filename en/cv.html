@@ -31,6 +31,9 @@
   @media print{body{background:#fff}}
     @media print{
       .btn{display:none}
+      #city-select{display:none !important}
+      #city-select + label{display:none !important}
+      label[for="city-select"]{display:none !important}
     .card{box-shadow:none;border-color:#999}
 .print.card{border:0 !important;border-radius:0 !important}
   .cv-card{border:0 !important}
@@ -75,7 +78,7 @@
           </div>
         </div>
         <div class="contact" style="margin-top:6px">
-          <span><strong>Location:</strong> Denizli, Turkey</span>
+          <span id="location-text"><strong>Location:</strong> Denizli, Turkey</span>
           <span><strong>Mobile:</strong> (+90) 546 681 5952</span>
           <span><strong>Email:</strong> <a href="mailto:hudaiapa88@gmail.com">hudaiapa88@gmail.com</a></span>
           <span><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/hudai-apa/" target="_blank" rel="noopener">linkedin.com/in/hudai-apa</a></span>
@@ -83,24 +86,32 @@
         </div>
       </div>
       <div class="actions">
+        <div style="margin-bottom:8px">
+          <label for="city-select" style="font-size:12px;color:var(--muted)">Target City:</label>
+          <select id="city-select" style="margin-left:6px;padding:2px 6px;border:1px solid var(--border);border-radius:4px;background:var(--card);color:var(--text)">
+            <option value="default">Current (Denizli)</option>
+            <option value="istanbul">Istanbul</option>
+            <option value="ankara">Ankara</option>
+          </select>
+        </div>
         <a class="btn" href="/en/">← Back</a>
         <a class="btn" href="/en/cv.html?print=1">PDF (Styled)</a>
   <a class="btn" href="/en/cv.html?ats=1&print=1">PDF (ATS)</a>
       </div>
     </div>
     <h2>Summary</h2>
-    <p>Software Developer specialized in Java and Spring Boot with 4+ years building scalable backends and real‑time systems. Founder of Lingol, delivered end‑to‑end across Flutter, React, and Spring Boot. Experience in image processing and ML.</p>
+    <p id="summary-text">Software Developer specialized in Java and Spring Boot with 4+ years building scalable backends and real‑time systems. Founder of Lingol, delivered end‑to‑end across Flutter, React, and Spring Boot. Experience in image processing and ML.</p>
     <div class="cv-grid">
   <div class="cv-card">
         <h2>Experience</h2>
-        <ul>
+        <ul id="experience-list">
           <li><strong>Freelance Developer</strong> — Nov 2023 – Present
             <ul>
               <li>Delivered custom solutions including my startup Lingol.</li>
               <li>Designed secure REST and RSocket APIs; tuned DB performance.</li>
             </ul>
           </li>
-          <li><strong>Java Backend Developer, Aselsis A.Ş.</strong> — Jan 2021 – Nov 2023
+          <li><strong>Java Backend Developer, Aselsis A.Ş.</strong> — On-site, Denizli · Jan 2021 – Nov 2023
             <ul>
               <li>Led backend architecture, API design, and database modeling.</li>
               <li>Implemented observability and performance optimizations.</li>
@@ -140,6 +151,54 @@
     if(params.get('print')==='1'){
       window.addEventListener('load',()=>setTimeout(()=>window.print(),100));
     }
+
+    // City selector functionality
+    const citySelect = document.getElementById('city-select');
+    const locationText = document.getElementById('location-text');
+    const summaryText = document.getElementById('summary-text');
+    const experienceList = document.getElementById('experience-list');
+
+    const cityContent = {
+      default: {
+        location: '<strong>Location:</strong> Denizli, Turkey'
+      },
+      istanbul: {
+        location: '<strong>Location:</strong> Istanbul, Turkey'
+      },
+      ankara: {
+        location: '<strong>Location:</strong> Ankara, Turkey'
+      }
+    };
+
+    // URL'den city parametresini oku ve dropdown'ı ayarla
+    const urlParams = new URLSearchParams(location.search);
+    const cityParam = urlParams.get('city');
+    if (cityParam && cityContent[cityParam]) {
+      citySelect.value = cityParam;
+      locationText.innerHTML = cityContent[cityParam].location;
+    }
+
+    citySelect.addEventListener('change', function() {
+      const selectedCity = this.value;
+      const content = cityContent[selectedCity];
+      
+      if (content) {
+        locationText.innerHTML = content.location;
+        // Summary ve Experience sabit kalıyor - değişmiyor
+      }
+    });
+
+    // PDF butonlarını güncelle - seçili şehri URL'ye ekle
+    const pdfButtons = document.querySelectorAll('.actions a[href*="print=1"]');
+    pdfButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const selectedCity = citySelect.value;
+        const currentUrl = this.href;
+        const newUrl = currentUrl + (selectedCity !== 'default' ? '&city=' + selectedCity : '');
+        window.location.href = newUrl;
+      });
+    });
   </script>
 </body>
 </html>

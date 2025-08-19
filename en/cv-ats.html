@@ -23,6 +23,7 @@
       .container { margin: 0 auto; }
       section, h2, ul, li { page-break-inside: avoid; }
       h2 { page-break-after: avoid; }
+  .print-break { page-break-before: always; }
     }
   </style>
 </head>
@@ -166,7 +167,7 @@
       </div>
     </section>
 
-    <section>
+  <section class="print-break">
       <h2 data-i18n="cv.sections.education">Education</h2>
       <div>
         <strong data-i18n="cv.education.degreeLine">Necmettin Erbakan University — Management Information Systems</strong> — <span data-i18n="cv.education.degreeBadge">2017 — 2021</span> (<span data-i18n="cv.education.degreeNote">Bachelor</span>)

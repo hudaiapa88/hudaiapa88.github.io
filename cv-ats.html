@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV (ATS) - Hüdai APA</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    :root { --fg:#000; --muted:#333; --accent:#6d28d9; }
+    html, body { padding:0; margin:0; }
+    body { font-family: Arial, Helvetica, sans-serif; color: var(--fg); line-height: 1.35; font-size: 12.25px; }
+    .container { max-width: 780px; margin: 8px auto 14px; padding: 0 10px; }
+    h1{ font-size:24px; margin:0; color: var(--accent); line-height: 1.1; }
+    h2{ font-size:14px; margin:10px 0 4px; color: var(--accent); border-bottom:1px solid #ddd; padding-bottom:2px; }
+    .subtitle{ color:#444; margin-bottom:4px; }
+    .meta { display:flex; flex-wrap: wrap; gap:6px 10px; font-size:12.25px; color: var(--muted); }
+    .meta-item { display:flex; gap:6px; align-items:center; }
+    ul { margin:2px 0 8px 16px; padding:0; }
+    li { margin:2px 0; }
+    @media print {
+      @page { size: A4; margin: 8mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .container { margin: 0 auto; }
+      section, h2, ul, li { page-break-inside: avoid; }
+      h2 { page-break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <img src="/assets/FOTO.jpg" alt="Hüdai APA" style="width:56px;height:56px;border-radius:50%;object-fit:cover;border:1px solid #ddd;" />
+        <div>
+          <h1>Hüdai APA</h1>
+          <div class="subtitle" data-i18n="cv.header.role">Yazılım Geliştirici</div>
+        </div>
+      </div>
+      <div class="meta" style="margin-top:6px;">
+        <div class="meta-item"><strong data-i18n="contact.labels.location">Konum</strong>: <span id="loc">İstanbul, Türkiye</span></div>
+        <div class="meta-item"><strong data-i18n="contact.labels.mobile">Mobil</strong>: (+90) 546 681 5952</div>
+        <div class="meta-item"><strong data-i18n="contact.labels.email">E‑posta</strong>: <a href="mailto:hudaiapa88@gmail.com">hudaiapa88@gmail.com</a></div>
+        <div class="meta-item"><strong data-i18n="contact.labels.linkedin">LinkedIn</strong>: <a href="https://linkedin.com/in/hudai-apa/" target="_blank" rel="noopener">linkedin.com/in/hudai-apa</a></div>
+        <div class="meta-item"><strong data-i18n="contact.labels.github">GitHub</strong>: <a href="https://github.com/hudaiapa88" target="_blank" rel="noopener">github.com/hudaiapa88</a></div>
+      </div>
+    </header>
+
+    <section>
+      <h2 data-i18n="cv.sections.summary">Profesyonel Özet</h2>
+      <p data-i18n="cv.summaryText">Backend teknolojilerinde, özellikle Java ve Spring Boot'ta uzmanlaşmış, çok yönlü bir Yazılım Geliştiricisiyim...</p>
+    </section>
+
+    <section>
+      <h2 data-i18n="cv.sections.tech">Teknik Yetenekler</h2>
+      <ul>
+        <li><strong data-i18n="skillsCats.languages">Diller</strong>: Java, JavaScript, Dart, Python</li>
+        <li><strong data-i18n="skillsCats.frameworks">Frameworkler</strong>: Spring Boot, JavaEE, JavaSE, Hibernate ORM, Flutter, React, JavaFX</li>
+        <li><strong data-i18n="skillsCats.architectures">Mimariler</strong>: Design Pattern, Layered Architecture, Microservice</li>
+        <li><strong data-i18n="skillsCats.databases">Veritabanları</strong>: PostgreSQL, MongoDB, Elasticsearch, MySQL</li>
+        <li><strong data-i18n="skillsCats.webservices">Web Servisleri</strong>: REST, RSocket</li>
+        <li><strong data-i18n="skillsCats.testing">Test</strong>: JUnit, Mockito, Rest Assured, JMeter</li>
+        <li><strong data-i18n="skillsCats.messaging">Mesajlaşma</strong>: Kafka, RabbitMQ</li>
+        <li><strong data-i18n="skillsCats.caching">Önbellek</strong>: Redis, Caffeine</li>
+        <li><strong data-i18n="skillsCats.libraries">Kütüphaneler</strong>: Lombok, MapStruct, springdoc-openapi, Thymeleaf, Apache Commons, MQTT, OpenCV, ZXing</li>
+        <li><strong data-i18n="skillsCats.tools">Araçlar</strong>: Git, Maven, Jira, Docker, <span data-i18n="skillsList.tools.observability">Gözlemlenebilirlik (Grafana, Loki, Tempo, Prometheus)</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 data-i18n="cv.sections.experience">Profesyonel Deneyim</h2>
+      <div>
+        <strong>Serbest Yazılımcı</strong> — <span data-i18n="experience.freelance.period">Kasım 2023 — Halen</span>
+        <ul>
+          <li data-i18n="experience.freelance.d1">• Kendi girişimim Lingol dahil ihtiyaçlara özel çözümler</li>
+          <li data-i18n="experience.freelance.d2">• Java/Spring Boot ile ölçeklenebilir REST API’ler ve sağlam mimariler</li>
+          <li data-i18n="experience.freelance.d3">• PostgreSQL/MongoDB modelleme ve performans; Redis ile önbellekleme</li>
+          <li data-i18n="experience.freelance.d4">• React/Tailwind ile modern arayüzler; Flutter ile mobil uygulamalar</li>
+        </ul>
+      </div>
+      <div>
+        <strong>Java Backend Geliştirici — Aselsis A.Ş., Yerinde, Denizli</strong> — <span data-i18n="experience.aselsis.period">Ocak 2021 — Kasım 2023</span>
+        <ul>
+          <li data-i18n="experience.aselsis.d1">• Spring Boot ile mikroservis temelli kurumsal uygulamalar</li>
+          <li data-i18n="experience.aselsis.d2">• JWT/Keycloak kimlik doğrulama ve yetkilendirme</li>
+          <li data-i18n="experience.aselsis.d3">• RabbitMQ ile asenkron akışlar; Redis ile caching/rate limiting</li>
+          <li data-i18n="experience.aselsis.d4">• PostgreSQL, Oracle, MongoDB üzerinde performans çalışmaları</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="cv.sections.projects">Öne Çıkan Projeler</h2>
+      <div>
+        <strong>Lingol — Kendi Girişimim Olan Dil Öğrenme Uygulaması</strong>
+        <div><strong data-i18n="projects.links.play">Google Play -></strong> <a href="https://play.google.com/store/apps/details?id=com.uc.lingol" target="_blank" rel="noopener">play.google.com/store/apps/details?id=com.uc.lingol</a></div>
+        <ul>
+          <li data-i18n="projects.bullets.lingol.b1">Flutter (Nylo) mobil ve Spring Boot backend sahibi; React admin paneli ve i18n mimarisi.</li>
+          <li data-i18n="projects.bullets.lingol.b2">RSocket tabanlı gerçek zamanlı oyun modu; özel auth ve OpenAI destekli istatistik/analiz.</li>
+          <li data-i18n="projects.bullets.lingol.b3">PostgreSQL üzerinde şema ve performans odaklı mimari.</li>
+        </ul>
+      </div>
+      <div>
+        <strong data-i18n="projects.erbakir.title">Erbakır VR — Kalite Kontrol Sistemi</strong>
+        <ul>
+          <li data-i18n="projects.bullets.erbakir.b1">Java SE ile gerçek zamanlı görüntü işleme, model servis entegrasyonu.</li>
+          <li data-i18n="projects.bullets.erbakir.b2">Python/OpenCV ile YOLOv4 eğitim ve değerlendirme süreçleri.</li>
+        </ul>
+      </div>
+      <div>
+        <strong data-i18n="projects.damlatur.title">Damlatur — Tur Şirketi İçin Planlama ve Rota Uygulaması</strong>
+        <ul>
+          <li data-i18n="projects.bullets.damlatur.b1">Spring Security, JPA/Hibernate ile sağlam backend; Caffeine Cache ile hızlandırma.</li>
+          <li data-i18n="projects.bullets.damlatur.b2">JMeter ile performans testleri ve dar boğaz analizi.</li>
+        </ul>
+      </div>
+      <div>
+        <strong data-i18n="projects.lojister.title">Lojister — Nakliye Uygulaması</strong>
+        <ul>
+          <li data-i18n="projects.bullets.lojister.b1">Sorgu ve performans optimizasyonları; çoklu dil desteği.</li>
+          <li data-i18n="projects.bullets.lojister.b2">iyzico, Halkbank, TEB gibi ödeme/entegrasyon süreçleri.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="cv.sections.education">Eğitim</h2>
+      <div><span data-i18n="cv.education.degreeLine">Necmettin Erbakan Üniversitesi — YBS</span> (<span data-i18n="cv.education.degreeBadge">2017 — 2021</span>)</div>
+    </section>
+    <section>
+      <h2 data-i18n="cv.sections.languages">Diller</h2>
+      <div><span data-i18n="cv.langs.turkish">Türkçe</span> — <span data-i18n="cv.langs.native">Ana Dil</span></div>
+      <div><span data-i18n="cv.langs.english">İngilizce</span> — <span data-i18n="cv.langs.level">Orta Seviye (B1)</span></div>
+    </section>
+  </div>
+  <script src="/js/i18n.js"></script>
+  <script>
+    (function(){
+      // init i18n to stored or default language
+      var lang = (new URL(location.href)).searchParams.get('lang') || localStorage.getItem('language') || 'tr';
+      if (window.i18n && window.i18n.setLanguage) window.i18n.setLanguage(lang);
+      // City handling
+      var citiesTr = { istanbul: 'İstanbul, Türkiye', ankara: 'Ankara, Türkiye', izmir: 'İzmir, Türkiye', denizli: 'Denizli, Türkiye' };
+      var citiesEn = { istanbul: 'Istanbul, Turkey', ankara: 'Ankara, Turkey', izmir: 'Izmir, Turkey', denizli: 'Denizli, Turkey' };
+      var key = (new URL(location.href)).searchParams.get('city') || localStorage.getItem('cvCity') || 'istanbul';
+      key = String(key).toLowerCase();
+      var dict = (lang === 'en') ? citiesEn : citiesTr;
+      if (!dict[key]) key = 'istanbul';
+      var el = document.getElementById('loc');
+      if (el) el.textContent = dict[key];
+
+      // Auto trigger print if requested
+      try {
+        var p = new URL(location.href).searchParams;
+        if (p.get('print') === '1') {
+          setTimeout(function(){ window.print(); }, 200);
+        }
+      } catch(e){}
+    })();
+  </script>
+</body>
+</html>

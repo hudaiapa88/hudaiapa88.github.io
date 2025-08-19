@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV - Hüdai APA</title>
+  <meta name="description" content="Hüdai APA - CV" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @media print {
+  @page { size: A4; margin: 5mm; }
+  body { background: white !important; font-size: 9.9px; line-height: 1.12; }
+      .no-print { display: none !important; }
+      .print-hide { display: none !important; }
+      .print-break { page-break-before: always; }
+      header { page-break-inside: avoid; }
+      h2 { page-break-after: avoid; }
+  /* allow content to flow naturally to reduce whitespace */
+  .experience-list > div, .projects-list > div { page-break-inside: auto; break-inside: auto; }
+      [class*="border"], .border, .border-b, .border-b-2, .border-gray-200, .dark\:border-gray-700, .dark\:border-gray-600 { border: 0 !important; }
+      .shadow-lg, .rounded-xl, .rounded-lg { box-shadow: none !important; }
+      .p-8 { padding: 8px !important; }
+      .p-6 { padding: 6px !important; }
+      .p-5 { padding: 4px !important; }
+      .mb-12 { margin-bottom: 10px !important; }
+      .mb-8 { margin-bottom: 8px !important; }
+      .mb-10 { margin-bottom: 8px !important; }
+      .mb-6 { margin-bottom: 5px !important; }
+      .grid { gap: 3px !important; }
+      .text-4xl { font-size: 1.25rem !important; }
+      .text-2xl { font-size: 0.95rem !important; }
+      .mt-16 { margin-top: 0 !important; }
+  header .relative { display: none !important; }
+  img.cv-photo { display: none !important; }
+  header .core-badges { display: none !important; }
+      /* tighten headings and lists */
+  h1, h2 { color:#000 !important; }
+  h2 { margin: 3px 0 2px !important; padding-bottom: 0 !important; }
+  ul { margin: 0 0 2px 12px !important; }
+  li { margin: 0 !important; }
+      .space-y-1 > * + * { margin-top: 1px !important; }
+      .space-y-3 > * + * { margin-top: 6px !important; }
+      /* compress skills chips */
+  .skills-grid .flex { gap: 2px !important; }
+  .skills-grid h3 { margin-bottom: 2px !important; font-size: 0.95em !important; }
+  .skills-grid span { background: none !important; padding: 0 !important; border: 0 !important; font-size: 0.95em !important; }
+  .skills-grid span::after { content: ', '; }
+  .skills-grid span:last-child::after { content: ''; }
+      /* contact grid dense */
+      .contact-grid { gap: 3px !important; }
+      .gradient-text { -webkit-text-fill-color: initial; background: none; color: #000 !important; }
+      /* Disable URL echoes to save space */
+      a[href^="http"]::after { content: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
+  <nav class="no-print fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-filter backdrop-blur-lg z-50 border-b border-gray-200 dark:border-gray-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <a href="/index.html" class="text-2xl font-bold gradient-text">Hüdai APA</a>
+        <div class="flex items-center space-x-4">
+          <label for="cvCitySelect" class="hidden md:block text-sm text-gray-700 dark:text-gray-300" data-i18n="cv.nav.cityLabel">Şehir:</label>
+          <select id="cvCitySelect" class="px-3 py-2 text-sm rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-brand-50 dark:hover:bg-brand-900 transition-colors">
+            <option value="istanbul">İstanbul</option>
+            <option value="ankara">Ankara</option>
+            <option value="izmir">İzmir</option>
+            <option value="denizli">Denizli</option>
+          </select>
+          <span id="cvCityCurrent" class="hidden md:inline text-sm text-gray-500"></span>
+          <a id="cvLangTR" href="/cv.html?lang=tr" class="px-3 py-1 text-sm rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-brand-100 dark:hover:bg-brand-900 transition-colors">TR</a>
+          <a id="cvLangEN" href="/cv.html?lang=en" class="px-3 py-1 text-sm rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-brand-100 dark:hover:bg-brand-900 transition-colors">EN</a>
+          <a id="cvATSLink" href="/cv-ats.html" class="px-3 py-1 text-sm rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" data-i18n="cv.nav.ats">ATS Friendly</a>
+          <button onclick="window.print()" class="px-4 py-2 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors">
+            <span data-i18n="cv.nav.print">Print / PDF</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 py-6 mt-16">
+    <header class="text-center mb-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 border border-gray-200 dark:border-gray-700">
+      <div class="no-print mb-4 text-left">
+        <a href="/index.html" class="text-brand-600 hover:text-brand-700" data-i18n="cv.nav.back">← Geri</a>
+      </div>
+  <div class="relative w-28 h-28 mx-auto mb-4">
+        <img src="/assets/FOTO.jpg" alt="Hüdai APA" class="cv-photo w-full h-full object-cover rounded-full border-4 border-brand-200 dark:border-brand-700 shadow-lg">
+      </div>
+      <h1 class="text-4xl font-bold mb-2 gradient-text">Hüdai APA</h1>
+      <h2 class="text-2xl text-gray-600 dark:text-gray-400 mb-6" data-i18n="cv.header.role">Yazılım Geliştirici</h2>
+      <!-- Core Stack / Highlights -->
+  <div class="core-badges flex flex-wrap justify-center gap-1 mb-4 text-sm">
+        <span class="px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900 text-brand-800 dark:text-brand-200">Java</span>
+        <span class="px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900 text-brand-800 dark:text-brand-200">Spring Boot</span>
+        <span class="px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900 text-brand-800 dark:text-brand-200">React</span>
+        <span class="px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900 text-brand-800 dark:text-brand-200">Flutter</span>
+        <span class="px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900 text-brand-800 dark:text-brand-200">PostgreSQL</span>
+        <span class="px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900 text-brand-800 dark:text-brand-200">Redis</span>
+        <span class="px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900 text-brand-800 dark:text-brand-200">Docker/K8s</span>
+      </div>
+  <div class="contact-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-sm text-gray-600 dark:text-gray-400 text-left md:text-center">
+        <div class="flex flex-col items-start md:items-center">
+          <span class="font-medium" data-i18n="contact.labels.location">Konum</span>
+          <span id="cvLocation">İstanbul, Türkiye</span>
+        </div>
+        <div class="flex flex-col items-start md:items-center">
+          <span class="font-medium" data-i18n="contact.labels.mobile">Mobil</span>
+          <span>(+90) 546 681 5952</span>
+        </div>
+        <div class="flex flex-col items-start md:items-center">
+          <span class="font-medium" data-i18n="contact.labels.email">E-posta</span>
+          <a href="mailto:hudaiapa88@gmail.com">hudaiapa88@gmail.com</a>
+        </div>
+        <div class="flex flex-col items-start md:items-center">
+          <span class="font-medium" data-i18n="contact.labels.linkedin">LinkedIn</span>
+          <a href="https://linkedin.com/in/hudai-apa/" target="_blank" rel="noopener">linkedin.com/in/hudai-apa</a>
+        </div>
+        <div class="flex flex-col items-start md:items-center">
+          <span class="font-medium" data-i18n="contact.labels.github">GitHub</span>
+          <a href="https://github.com/hudaiapa88" target="_blank" rel="noopener">github.com/hudaiapa88</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="mb-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-bold mb-3 text-brand-700 dark:text-brand-300 border-b border-brand-200 dark:border-brand-700 pb-1" data-i18n="cv.sections.summary">Profesyonel Özet</h2>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed" data-i18n="cv.summaryText">...</p>
+    </section>
+
+    <section class="mb-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-bold mb-4 text-brand-700 dark:text-brand-300 border-b border-brand-200 dark:border-brand-700 pb-1" data-i18n="cv.sections.tech">Teknik Yetenekler</h2>
+      <!-- For brevity, reuse categories from index via i18n keys -->
+  <div class="skills-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div>
+          <h3 class="font-semibold text-brand-600 dark:text-brand-400 mb-3" data-i18n="skillsCats.languages">Diller</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-brand-100 dark:bg-brand-900 text-brand-800 dark:text-brand-200 rounded-full text-sm" data-i18n="skillsList.languages.java">Java</span>
+            <span class="px-3 py-1 bg-brand-100 dark:bg-brand-900 text-brand-800 dark:text-brand-200 rounded-full text-sm" data-i18n="skillsList.languages.javascript">JavaScript</span>
+            <span class="px-3 py-1 bg-brand-100 dark:bg-brand-900 text-brand-800 dark:text-brand-200 rounded-full text-sm" data-i18n="skillsList.languages.python">Python</span>
+            <span class="px-3 py-1 bg-brand-100 dark:bg-brand-900 text-brand-800 dark:text-brand-200 rounded-full text-sm" data-i18n="skillsList.languages.dart">Dart</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-brand-600 dark:text-brand-400 mb-3" data-i18n="skillsCats.frameworks">Frameworkler</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-brand-50 dark:bg-brand-900/40 text-brand-800 dark:text-brand-200 rounded-full text-sm" data-i18n="skillsList.frameworks.springBoot">Spring Boot</span>
+            <span class="px-3 py-1 bg-brand-50 dark:bg-brand-900/40 text-brand-800 dark:text-brand-200 rounded-full text-sm" data-i18n="skillsList.frameworks.javaEE">JavaEE</span>
+            <span class="px-3 py-1 bg-brand-50 dark:bg-brand-900/40 text-brand-800 dark:text-brand-200 rounded-full text-sm" data-i18n="skillsList.frameworks.javaSE">JavaSE</span>
+            <span class="px-3 py-1 bg-brand-50 dark:bg-brand-900/40 text-brand-800 dark:text-brand-200 rounded-full text-sm" data-i18n="skillsList.frameworks.hibernateORM">Hibernate ORM</span>
+            <span class="px-3 py-1 bg-brand-50 dark:bg-brand-900/40 text-brand-800 dark:text-brand-200 rounded-full text-sm" data-i18n="skillsList.frameworks.react">React</span>
+            <span class="px-3 py-1 bg-brand-50 dark:bg-brand-900/40 text-brand-800 dark:text-brand-200 rounded-full text-sm" data-i18n="skillsList.frameworks.flutter">Flutter</span>
+            <span class="px-3 py-1 bg-brand-50 dark:bg-brand-900/40 text-brand-800 dark:text-brand-200 rounded-full text-sm" data-i18n="skillsList.frameworks.javaFX">JavaFX</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-brand-600 dark:text-brand-400 mb-3" data-i18n="skillsCats.architectures">Mimariler</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.architectures.designPatterns">Design Patterns</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.architectures.layered">Layered Architecture</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.architectures.microservice">Microservice</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-brand-600 dark:text-brand-400 mb-3" data-i18n="skillsCats.databases">Veritabanları</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.databases.postgresql">PostgreSQL</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.databases.mongodb">MongoDB</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.databases.elasticsearch">Elasticsearch</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.databases.mysql">MySQL</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-brand-600 dark:text-brand-400 mb-3" data-i18n="skillsCats.webservices">Web Servisleri</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.webservices.rest">REST</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.webservices.rsocket">RSocket</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-brand-600 dark:text-brand-400 mb-3" data-i18n="skillsCats.testing">Test</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.testing.junit">JUnit</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.testing.mockito">Mockito</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.testing.restAssured">Rest Assured</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.testing.jmeter">JMeter</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-brand-600 dark:text-brand-400 mb-3" data-i18n="skillsCats.messaging">Mesajlaşma</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.messaging.kafka">Kafka</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.messaging.rabbitmq">RabbitMQ</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-brand-600 dark:text-brand-400 mb-3" data-i18n="skillsCats.caching">Önbellek</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.caching.redis">Redis</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.caching.caffeine">Caffeine</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-brand-600 dark:text-brand-400 mb-3" data-i18n="skillsCats.libraries">Kütüphaneler</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.libraries.lombok">Lombok</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.libraries.mapstruct">MapStruct</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.libraries.springdoc">springdoc-openapi</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.libraries.thymeleaf">Thymeleaf</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.libraries.apacheCommons">Apache Commons</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.libraries.mqtt">MQTT</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.libraries.opencv">OpenCV</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.libraries.zxing">ZXing</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-brand-600 dark:text-brand-400 mb-3" data-i18n="skillsCats.tools">Araçlar</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.tools.git">Git</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.tools.maven">Maven</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.tools.jira">Jira</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.tools.docker">Docker</span>
+            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-sm" data-i18n="skillsList.tools.observability">Observability (Grafana, Loki, Tempo, Prometheus)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-bold mb-4 text-brand-700 dark:text-brand-300 border-b border-brand-200 dark:border-brand-700 pb-1" data-i18n="cv.sections.experience">Profesyonel Deneyim</h2>
+      <div class="experience-list space-y-3 text-gray-700 dark:text-gray-300">
+        <div>
+          <div class="font-semibold"><span data-i18n="experience.freelance.title"></span> — <span data-i18n="experience.freelance.period"></span></div>
+          <ul class="list-disc ml-6 mt-1 space-y-1">
+            <li data-i18n="experience.freelance.d1">• Kendi girişimim Lingol dahil ihtiyaçlara özel çözümler</li>
+            <li data-i18n="experience.freelance.d2">• Java/Spring Boot ile ölçeklenebilir REST API’ler ve sağlam mimariler</li>
+            <li data-i18n="experience.freelance.d3">• PostgreSQL/MongoDB modelleme ve performans; Redis ile önbellekleme</li>
+            <li data-i18n="experience.freelance.d4">• React/Tailwind ile modern arayüzler; Flutter ile mobil uygulamalar</li>
+          </ul>
+          
+        </div>
+        <div>
+          <div class="font-semibold"><span data-i18n="experience.aselsis.title"></span> — <span data-i18n="experience.aselsis.period"></span></div>
+          <ul class="list-disc ml-6 mt-1 space-y-1">
+            <li data-i18n="experience.aselsis.d1">• Spring Boot ile mikroservis temelli kurumsal uygulamalar</li>
+            <li data-i18n="experience.aselsis.d2">• JWT/Keycloak kimlik doğrulama ve yetkilendirme</li>
+            <li data-i18n="experience.aselsis.d3">• RabbitMQ ile asenkron akışlar; Redis ile caching/rate limiting</li>
+            <li data-i18n="experience.aselsis.d4">• PostgreSQL, Oracle, MongoDB üzerinde performans çalışmaları</li>
+          </ul>
+          
+        </div>
+      </div>
+    </section>
+
+  <section class="mb-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 border border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-bold mb-4 text-brand-700 dark:text-brand-300 border-b border-brand-200 dark:border-brand-700 pb-1" data-i18n="cv.sections.projects">Öne Çıkan Projeler</h2>
+      <div class="projects-list space-y-3 text-gray-700 dark:text-gray-300">
+        <div>
+          <div class="font-semibold" data-i18n="projects.lingol.title">Lingol — Kendi Girişimim Olan Dil Öğrenme Uygulaması</div>
+          <div class="text-sm print-hide"><strong>Google Play:</strong> <a class="text-brand-600" href="https://play.google.com/store/apps/details?id=com.uc.lingol" target="_blank" rel="noopener">play.google.com/store/apps/details?id=com.uc.lingol</a></div>
+          <ul class="list-disc ml-6 mt-1 space-y-1">
+            <li data-i18n="projects.bullets.lingol.b1">Owner of Flutter (Nylo) mobile and Spring Boot backend; React admin and i18n architecture.</li>
+            <li data-i18n="projects.bullets.lingol.b2">Real-time game mode over RSocket; custom auth and OpenAI-powered stats/analysis.</li>
+            <li data-i18n="projects.bullets.lingol.b3">Schema and performance focused architecture on PostgreSQL.</li>
+          </ul>
+          
+        </div>
+        <div>
+          <div class="font-semibold" data-i18n="projects.erbakir.title">Erbakır VR — Kalite Kontrol Sistemi</div>
+          <ul class="list-disc ml-6 mt-1 space-y-1">
+            <li data-i18n="projects.bullets.erbakir.b1">Real-time image processing in Java SE; model service integration.</li>
+            <li data-i18n="projects.bullets.erbakir.b2">YOLOv4 training and evaluation with Python/OpenCV.</li>
+          </ul>
+          
+        </div>
+        <div>
+          <div class="font-semibold" data-i18n="projects.damlatur.title">Damlatur — Tur Şirketi İçin Planlama ve Rota Uygulaması</div>
+          <ul class="list-disc ml-6 mt-1 space-y-1">
+            <li data-i18n="projects.bullets.damlatur.b1">Robust backend with Spring Security and JPA/Hibernate; accelerated via Caffeine Cache.</li>
+            <li data-i18n="projects.bullets.damlatur.b2">Performance testing and bottleneck analysis with JMeter.</li>
+          </ul>
+          
+        </div>
+        <div>
+          <div class="font-semibold" data-i18n="projects.lojister.title">Lojister — Nakliye Uygulaması</div>
+          <ul class="list-disc ml-6 mt-1 space-y-1">
+            <li data-i18n="projects.bullets.lojister.b1">Query and performance optimizations; multi-language support.</li>
+            <li data-i18n="projects.bullets.lojister.b2">Payment/integration flows incl. iyzico, Halkbank, TEB.</li>
+          </ul>
+          
+        </div>
+      </div>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 border border-gray-200 dark:border-gray-700">
+        <h2 class="text-2xl font-bold mb-3 text-brand-700 dark:text-brand-300 border-b border-brand-200 dark:border-brand-700 pb-1" data-i18n="cv.sections.education">Eğitim</h2>
+        <p><span data-i18n="cv.education.degreeLine"></span> — <span data-i18n="cv.education.degreeBadge"></span></p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 border border-gray-200 dark:border-gray-700">
+        <h2 class="text-2xl font-bold mb-3 text-brand-700 dark:text-brand-300 border-b border-brand-200 dark:border-brand-700 pb-1" data-i18n="cv.sections.languages">Diller</h2>
+        <p><span data-i18n="cv.langs.turkish"></span> — <span data-i18n="cv.langs.native"></span></p>
+        <p><span data-i18n="cv.langs.english"></span> — <span data-i18n="cv.langs.level"></span></p>
+      </div>
+    </section>
+  </main>
+  <script>
+    (function(){
+      // language from ?lang and localStorage
+      var params = new URLSearchParams(window.location.search);
+      var lang = params.get('lang') || localStorage.getItem('language') || 'tr';
+      var stored = localStorage.getItem('language');
+      if (lang !== 'tr' && lang !== 'en') lang = stored || 'tr';
+      if (window.i18n && window.i18n.setLanguage) window.i18n.setLanguage(lang); else {
+        // Fallback: ensure i18n picks it up when ready
+        document.addEventListener('DOMContentLoaded', function(){ if (window.i18n) window.i18n.setLanguage(lang); });
+      }
+
+      var sel = document.getElementById('cvCitySelect');
+      var locEl = document.getElementById('cvLocation');
+      var currentEl = document.getElementById('cvCityCurrent');
+      var p = new URLSearchParams(window.location.search);
+      var cityKey = p.get('city') || localStorage.getItem('cvCity') || 'istanbul';
+      var fallbackEn = { istanbul: 'Istanbul, Turkey', ankara: 'Ankara, Turkey', izmir: 'Izmir, Turkey', denizli: 'Denizli, Turkey' };
+      function cityLabel(key) {
+        if (window.i18n && typeof window.i18n.t === 'function') {
+          var t = window.i18n.t('cv.cities.' + key);
+          if (t && !/^cv\.cities\./.test(t)) return t;
+        }
+        // fallback if i18n not ready
+        return (document.documentElement.lang === 'en') ? (fallbackEn[key] || key) : key.charAt(0).toUpperCase() + key.slice(1) + ', Türkiye';
+      }
+      if (sel) sel.value = cityKey;
+      if (locEl) locEl.textContent = cityLabel(cityKey);
+      if (currentEl) {
+        var curTpl = (window.i18n && window.i18n.t) ? window.i18n.t('cv.nav.current') : '';
+        if (curTpl && !/^cv\.nav\./.test(curTpl)) {
+          currentEl.textContent = curTpl.replace('{city}', cityLabel(cityKey));
+        } else {
+          currentEl.textContent = '(' + cityLabel(cityKey) + ')';
+        }
+      }
+      function syncLinks() {
+        var trL = document.getElementById('cvLangTR');
+        var enL = document.getElementById('cvLangEN');
+        var ats = document.getElementById('cvATSLink');
+        var base = '/cv.html?city=' + encodeURIComponent(cityKey) + '&lang=';
+        if (trL) trL.href = base + 'tr';
+        if (enL) enL.href = base + 'en';
+        if (ats) ats.href = '/cv-ats.html?city=' + encodeURIComponent(cityKey) + '&lang=' + lang + '&print=1';
+      }
+      syncLinks();
+      if (sel) sel.addEventListener('change', function(){
+        cityKey = this.value;
+        localStorage.setItem('cvCity', cityKey);
+        if (locEl) locEl.textContent = cityLabel(cityKey);
+        if (currentEl) {
+          var curTpl2 = (window.i18n && window.i18n.t) ? window.i18n.t('cv.nav.current') : '';
+          if (curTpl2 && !/^cv\.nav\./.test(curTpl2)) {
+            currentEl.textContent = curTpl2.replace('{city}', cityLabel(cityKey));
+          } else {
+            currentEl.textContent = '(' + cityLabel(cityKey) + ')';
+          }
+        }
+        var p = new URLSearchParams(window.location.search);
+        p.set('city', cityKey); p.set('lang', lang);
+        history.replaceState(null, '', window.location.pathname + '?' + p.toString());
+        syncLinks();
+      });
+
+      // Re-apply city label after i18n initializes to ensure correct localization
+      document.addEventListener('DOMContentLoaded', function(){
+        if (locEl) locEl.textContent = cityLabel(cityKey);
+        if (currentEl) {
+          var curTpl3 = (window.i18n && window.i18n.t) ? window.i18n.t('cv.nav.current') : '';
+          if (curTpl3 && !/^cv\.nav\./.test(curTpl3)) {
+            currentEl.textContent = curTpl3.replace('{city}', cityLabel(cityKey));
+          } else {
+            currentEl.textContent = '(' + cityLabel(cityKey) + ')';
+          }
+        }
+      });
+    })();
+  </script>
+  <script src="/js/i18n.js"></script>
+</body>
+</html>

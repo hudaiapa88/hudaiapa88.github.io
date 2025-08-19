@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV (ATS) - Hüdai APA</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    :root { --fg:#000; --muted:#333; --accent:#6d28d9; }
+    html, body { padding:0; margin:0; }
+    body { font-family: Arial, Helvetica, sans-serif; color: var(--fg); line-height: 1.35; font-size: 12.25px; }
+    .container { max-width: 780px; margin: 8px auto 14px; padding: 0 10px; }
+    h1{ font-size:24px; margin:0; color: var(--accent); line-height: 1.1; }
+    h2{ font-size:14px; margin:10px 0 4px; color: var(--accent); border-bottom:1px solid #ddd; padding-bottom:2px; }
+    .subtitle{ color:#444; margin-bottom:4px; }
+    .meta { display:flex; flex-wrap: wrap; gap:6px 10px; font-size:12.25px; color: var(--muted); }
+    .meta-item { display:flex; gap:6px; align-items:center; }
+    ul { margin:2px 0 8px 16px; padding:0; }
+    li { margin:2px 0; }
+    @media print {
+      @page { size: A4; margin: 8mm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .container { margin: 0 auto; }
+      section, h2, ul, li { page-break-inside: avoid; }
+      h2 { page-break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <img src="/assets/FOTO.jpg" alt="Hüdai APA" style="width:56px;height:56px;border-radius:50%;object-fit:cover;border:1px solid #ddd;" />
+        <div>
+          <h1>Hüdai APA</h1>
+          <div class="subtitle" data-i18n="cv.header.role">Software Developer</div>
+        </div>
+      </div>
+      <div class="meta" style="margin-top:6px;">
+        <div class="meta-item"><strong data-i18n="contact.labels.location">Location</strong>: <span id="loc">Istanbul, Turkey</span></div>
+        <div class="meta-item"><strong data-i18n="contact.labels.mobile">Mobile</strong>: (+90) 546 681 5952</div>
+        <div class="meta-item"><strong data-i18n="contact.labels.email">Email</strong>: <a href="mailto:hudaiapa88@gmail.com">hudaiapa88@gmail.com</a></div>
+        <div class="meta-item"><strong data-i18n="contact.labels.linkedin">LinkedIn</strong>: <a href="https://linkedin.com/in/hudai-apa/" target="_blank" rel="noopener">linkedin.com/in/hudai-apa</a></div>
+        <div class="meta-item"><strong data-i18n="contact.labels.github">GitHub</strong>: <a href="https://github.com/hudaiapa88" target="_blank" rel="noopener">github.com/hudaiapa88</a></div>
+      </div>
+    </header>
+
+    <section>
+      <h2 data-i18n="cv.sections.summary">Professional Summary</h2>
+      <p data-i18n="cv.summaryText">Backend-focused developer with 4+ years experience...</p>
+    </section>
+
+    <section>
+      <h2 data-i18n="cv.sections.tech">Technical Skills</h2>
+      <div class="two-col">
+        <div>
+          <strong data-i18n="skillsCats.languages">Languages</strong>:
+          <div>
+            <span class="badge">Java</span>
+            <span class="badge">JavaScript/TypeScript</span>
+            <span class="badge">Python</span>
+            <span class="badge">Dart</span>
+            <span class="badge">SQL</span>
+          </div>
+        </div>
+        <div>
+          <strong data-i18n="skillsCats.frameworks">Frameworks</strong>:
+          <div>
+            <span class="badge">Spring Boot</span>
+            <span class="badge">JavaEE</span>
+            <span class="badge">Hibernate ORM</span>
+            <span class="badge">React</span>
+            <span class="badge">Next.js</span>
+            <span class="badge">Flutter</span>
+          </div>
+        </div>
+        <div>
+          <strong data-i18n="skillsCats.architectures">Architectures</strong>:
+          <div>
+            <span class="badge">Microservices</span>
+            <span class="badge">REST</span>
+            <span class="badge">Clean Architecture</span>
+            <span class="badge">DDD</span>
+            <span class="badge">CQRS</span>
+          </div>
+        </div>
+        <div>
+          <strong data-i18n="skillsCats.databases">Databases</strong>:
+          <div>
+            <span class="badge">PostgreSQL</span>
+            <span class="badge">MySQL</span>
+            <span class="badge">Oracle</span>
+            <span class="badge">MongoDB</span>
+          </div>
+        </div>
+        <div>
+          <strong data-i18n="skillsCats.testing">Testing</strong>:
+          <div>
+            <span class="badge">JUnit</span>
+            <span class="badge">Mockito</span>
+            <span class="badge">Postman</span>
+          </div>
+        </div>
+        <div>
+          <strong data-i18n="skillsCats.messaging">Message Queue</strong> & <strong data-i18n="skillsCats.caching">Cache</strong>:
+          <div>
+            <span class="badge">RabbitMQ</span>
+            <span class="badge">Kafka</span>
+            <span class="badge">Redis</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="cv.sections.experience">Experience</h2>
+      <div>
+        <strong data-i18n="experience.freelance.title">Freelance Software Developer (Full‑Stack)</strong> — <span data-i18n="experience.freelance.period">Nov 2023 — Present</span>
+        <ul>
+          <li>Designed and developed REST APIs with Java/Spring Boot; built modern UIs with React/Next.js.</li>
+          <li>Data modeling and performance on PostgreSQL/MySQL; caching with Redis.</li>
+          <li>Containerization with Docker; basic CI/CD and cloud deployments.</li>
+        </ul>
+      </div>
+      <div>
+        <strong data-i18n="experience.aselsis.title">Java Backend Developer — Aselsis</strong> — <span data-i18n="experience.aselsis.period">Jan 2021 — Nov 2023</span>
+        <ul>
+          <li>Built enterprise microservice applications with Spring Boot.</li>
+          <li>Implemented JWT/Keycloak authentication and authorization.</li>
+          <li>Event-driven flows with RabbitMQ; caching/rate limiting with Redis.</li>
+          <li>Schema design, indexing and performance tuning on PostgreSQL/Oracle/MongoDB.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="cv.sections.projects">Projects</h2>
+      <div>
+        <strong data-i18n="projects.lingol.title">Lingol — Multilingual Mobile App</strong>
+        <ul>
+          <li>Owner of Flutter (Nylo) mobile and Spring Boot backend; React admin and i18n architecture.</li>
+          <li>Real-time game mode over RSocket; custom auth and OpenAI-powered analytics.</li>
+          <li>Schema & performance focused architecture on PostgreSQL.</li>
+        </ul>
+      </div>
+      <div>
+        <strong data-i18n="projects.erbakir.title">Erbakır VR — Quality Control System</strong> (Aselsis A.Ş.)
+        <ul>
+          <li>Real-time image processing in Java SE; model service integration.</li>
+          <li>YOLOv4 training and evaluation with Python/OpenCV.</li>
+        </ul>
+      </div>
+      <div>
+        <strong data-i18n="projects.damlatur.title">Damlatur — Tour Planning & Routing App</strong> (Aselsis A.Ş.)
+        <ul>
+          <li>Robust backend with Spring Security & JPA/Hibernate; accelerated via Caffeine Cache.</li>
+          <li>Performance testing and bottleneck analysis with JMeter.</li>
+        </ul>
+      </div>
+      <div>
+        <strong data-i18n="projects.lojister.title">Lojister — Logistics Management</strong> (Aselsis A.Ş.)
+        <ul>
+          <li>Query and performance optimizations; multi-language support.</li>
+          <li>Payment/integration flows incl. iyzico, Halkbank, TEB.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="cv.sections.education">Education</h2>
+      <div>
+        <strong data-i18n="cv.education.degreeLine">Necmettin Erbakan University — Management Information Systems</strong> — <span data-i18n="cv.education.degreeBadge">2017 — 2021</span> (<span data-i18n="cv.education.degreeNote">Bachelor</span>)
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="cv.sections.languages">Languages</h2>
+      <div><span data-i18n="cv.langs.turkish">Turkish</span> — <span data-i18n="cv.langs.native">Native</span></div>
+      <div><span data-i18n="cv.langs.english">English</span> — <span data-i18n="cv.langs.level">Intermediate (B1)</span></div>
+    </section>
+  </div>
+  <script src="/js/i18n.js"></script>
+  <script>
+    (function(){
+      // init i18n to stored or default language
+      var lang = (new URL(location.href)).searchParams.get('lang') || localStorage.getItem('language') || 'en';
+      if (window.i18n && window.i18n.setLanguage) window.i18n.setLanguage(lang);
+      // City handling for ATS view
+      var cities = { istanbul: 'Istanbul, Turkey', ankara: 'Ankara, Turkey', izmir: 'Izmir, Turkey', denizli: 'Denizli, Turkey' };
+      var params = new URLSearchParams(window.location.search);
+      var key = (params.get('city') || localStorage.getItem('cvCity') || 'istanbul').toLowerCase();
+      if (!cities[key]) key = 'istanbul';
+      var el = document.getElementById('loc');
+      if (el) el.textContent = cities[key];
+
+      // Auto trigger print if requested
+      try {
+        var p = new URL(location.href).searchParams;
+        if (p.get('print') === '1') {
+          setTimeout(function(){ window.print(); }, 200);
+        }
+      } catch(e){}
+  })();
+  </script>
+</body>
+</html>

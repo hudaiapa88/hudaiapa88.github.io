@@ -1,0 +1,39 @@
+{
+  "name": "Hüdai APA - Software Developer Portfolio",
+  "short_name": "Hüdai APA",
+  "description": "Backend-focused software developer with 4+ years of experience. Java/Spring Boot, React/Tailwind, Flutter. Building modern, scalable applications.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "portfolio", "developer"],
+  "lang": "tr",
+  "dir": "ltr",
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Projects",
+      "url": "/#projects",
+      "description": "View my projects"
+    },
+    {
+      "name": "Contact",
+      "url": "/#contact",
+      "description": "Get in touch"
+    },
+    {
+      "name": "CV",
+      "url": "/cv.html",
+      "description": "Download my CV"
+    }
+  ]
+}

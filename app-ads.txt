@@ -1,0 +1,4 @@
+# app-ads.txt - hudaiapa88.github.io
+# https://iabtechlab.com/app-ads-txt/
+
+google.com, pub-4147823498263781, DIRECT, f08c47fec0942fa0

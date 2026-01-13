@@ -30,25 +30,30 @@ class I18n {
           cities: { istanbul: "İstanbul, Türkiye", ankara: "Ankara, Türkiye", izmir: "İzmir, Türkiye", denizli: "Denizli, Türkiye" }
         },
         hero: {
+          greeting: "Merhaba, Ben",
           title: "Yazılım Geliştirici",
-          subtitle: "Backend · Java/Spring Boot · React/Tailwind · Flutter",
-          cta1: "Projelerimi İncele",
-          cta2: "Benimle İletişime Geç",
-          stats: { experience: "Yıl Deneyim", projects: "Proje", passion: "Tutku" }
+          subtitle: "Backend odaklı geliştirici. 4+ yıl deneyim. Java/Spring Boot · React/Tailwind · Flutter · Mikroservisler",
+          cta1: "Projelerimi Görüntüle",
+          cta2: "İletişime Geç",
+          scroll: "Keşfetmek için kaydır",
+          stats: { years: "Yıl Deneyim", projects: "Proje", passion: "Tutku" },
+          downloadCV: "CV İndir"
         },
         about: {
           title: "Hakkımda",
-          subtitle: "Modern teknolojilerde uzman tutkulu yazılım geliştiricisi",
+          subtitle: "Modern, ölçeklenebilir çözümler yaratan tutkulu geliştirici",
           who: {
               title: "Ben Kimim?",
-              p1: "4+ yıldır backend odaklı, Java/Spring Boot ile REST API’ler geliştiren; React/Tailwind ile modern arayüzler ve Flutter ile mobil uygulamalar oluşturan bir geliştiriciyim.",
-              p2: "Mikroservis, mesajlaşma (RabbitMQ/Kafka), cache (Redis), konteynerizasyon (Docker/K8s) ve Clean Architecture/DDD üzerine çalışıyorum.",
-              p3: "Sürdürülebilir, test edilebilir ve ölçeklenebilir sistemler kurmaya odaklanıyorum."
+              p1: "4+ yıldır backend odaklı, Java/Spring Boot ile REST API'ler geliştiren; React/Tailwind ile modern arayüzler ve Flutter ile mobil uygulamalar oluşturan bir geliştiriciyim.",
+              p2: "Mikroservis, mesajlaşma (RabbitMQ/Kafka), cache (Redis), konteynerizasyon (Docker) konusunda deneyimliyim.",
+              p3: "Test edilebilir, bakım yapılabilir ve ölçeklenebilir sistemler inşa etmek için Clean Architecture, SOLID ve DDD'yi önemserim."
           },
+          availability: "Fırsatlara açığım",
+          location: "İstanbul, Türkiye",
           skills: {
-            backend: { title: "Backend Geliştirme", desc: "Java, Spring Boot, RESTful API'ler, Mikroservis Mimarisi" },
-            mobile: { title: "Mobil Geliştirme", desc: "Flutter, Dart, Cross-platform Uygulamalar" },
-            ai: { title: "AI & ML", desc: "Makine Öğrenmesi, Görüntü İşleme, Veri Analizi" }
+            backend: { title: "Backend Geliştirme", desc: "Java, Spring Boot, RESTful API'ler ve Mikroservis mimarisinde uzman" },
+            mobile: { title: "Mobil Geliştirme", desc: "Flutter ve Dart ile güzel cross-platform uygulamalar geliştirme" },
+            ai: { title: "AI & ML", desc: "Makine Öğrenimi, Görüntü İşleme ve Bilgisayar Görüsü deneyimi" }
           }
         },
         experience: {
@@ -150,6 +155,8 @@ class I18n {
           rights: "Tüm hakları saklıdır",
           switch: "English"
         },
+        loading: "Yükleniyor...",
+        retry: "Tekrar Dene",
         meta: {
           title: "Hüdai APA - Yazılım Geliştirici Portföyü",
             description: "Hüdai APA - Backend odaklı yazılım geliştirici. Java/Spring Boot, React/Tailwind, Flutter. 4+ yıl deneyim.",
@@ -173,31 +180,36 @@ class I18n {
           nav: { back: "← Back", ats: "PDF (ATS)", print: "PDF (Styled)", cityLabel: "Target City:", current: "Current ({city})" },
           header: { role: "Software Developer" },
           sections: { summary: "Professional Summary", tech: "Technical Skills", experience: "Experience", projects: "Projects", education: "Education", languages: "Languages" },
-          summaryText: "Backend-focused developer with 4+ years of experience building robust REST APIs with Java/Spring Boot, modern UIs with React/Tailwind, and mobile apps with Flutter. Experienced with microservices, messaging (RabbitMQ/Kafka), caching (Redis), and containerization/orchestration (Docker/Kubernetes). I value Clean Architecture, SOLID, and DDD to design testable, maintainable, and scalable systems.",
+          summaryText: "Backend-focused developer with 4+ years of experience building robust REST APIs with Java/Spring Boot, modern UIs with React/Tailwind, and mobile apps with Flutter. Experienced with microservices, messaging (RabbitMQ/Kafka), caching (Redis), and containerization (Docker). I value Clean Architecture, SOLID, and DDD to design testable, maintainable, and scalable systems.",
           education: { degreeLine: "Necmettin Erbakan University — Management Information Systems", degreeBadge: "2017 — 2021", degreeNote: "Bachelor" },
           langs: { turkish: "Turkish", native: "Native", english: "English", level: "Intermediate (B1)" },
           cities: { istanbul: "Istanbul, Turkey", ankara: "Ankara, Turkey", izmir: "Izmir, Turkey", denizli: "Denizli, Turkey" }
         },
         hero: {
+          greeting: "Hi, I'm",
           title: "Software Developer",
-          subtitle: "Backend · Java/Spring Boot · React/Tailwind · Flutter",
-          cta1: "View My Projects",
+          subtitle: "Backend-focused developer with 4+ years of experience building modern applications. Java/Spring Boot · React/Tailwind · Flutter · Microservices",
+          cta1: "View My Work",
           cta2: "Get In Touch",
-          stats: { experience: "Years Experience", projects: "Projects", passion: "Passion" }
+          scroll: "Scroll to explore",
+          stats: { years: "Years Experience", projects: "Projects", passion: "Passion" },
+          downloadCV: "Download CV"
         },
         about: {
           title: "About Me",
-          subtitle: "Passionate software developer with expertise in modern technologies",
+          subtitle: "Passionate developer creating modern, scalable solutions",
           who: {
             title: "Who Am I?",
               p1: "Backend-focused developer with 4+ years building REST APIs in Java/Spring Boot, modern UIs with React/Tailwind, and mobile apps with Flutter.",
-              p2: "Experienced with microservices, messaging (RabbitMQ/Kafka), caching (Redis), containers and orchestration (Docker/K8s).",
-              p3: "I care about Clean Architecture, SOLID, DDD and building testable, maintainable, scalable systems."
+              p2: "Experienced with microservices, messaging (RabbitMQ/Kafka), caching (Redis), and containerization (Docker).",
+              p3: "I value Clean Architecture, SOLID principles, and Domain-Driven Design to build testable, maintainable, and scalable systems."
           },
+          availability: "Available for opportunities",
+          location: "Istanbul, Turkey",
           skills: {
-            backend: { title: "Backend Development", desc: "Java, Spring Boot, RESTful APIs, Microservices" },
-            mobile: { title: "Mobile Development", desc: "Flutter, Dart, Cross-platform Applications" },
-            ai: { title: "AI & ML", desc: "Machine Learning, Image Processing, Data Analysis" }
+            backend: { title: "Backend Development", desc: "Expert in Java, Spring Boot, RESTful APIs, and Microservices architecture" },
+            mobile: { title: "Mobile Development", desc: "Building beautiful cross-platform apps with Flutter and Dart" },
+            ai: { title: "AI & ML", desc: "Experience with Machine Learning, Image Processing, and Computer Vision" }
           }
         },
         experience: {
@@ -293,18 +305,20 @@ class I18n {
           form: { title: "Send a Message", name: "Name", email: "Email", subject: "Subject", message: "Message", send: "Send Message" }
         },
         footer: {
-          desc: "Passionate software developer expert in modern technologies",
+          desc: "Passionate developer expert in modern technologies",
           links: { title: "Quick Links" },
           tech: { title: "Technologies", javaSpring: "Java & Spring Boot", flutter: "Flutter & Dart", react: "React & JavaScript", ml: "Machine Learning", cv: "Computer Vision" },
           rights: "All rights reserved",
           switch: "Türkçe"
         },
+        loading: "Loading...",
+        retry: "Retry",
         meta: {
           title: "Hüdai APA - Software Developer Portfolio",
-            description: "Hüdai APA - Backend-focused developer. Java/Spring Boot, React/Tailwind, Flutter. 4+ years experience.",
+          description: "Hüdai APA - Backend-focused developer. Java/Spring Boot, React/Tailwind, Flutter. 4+ years experience.",
           og: {
             title: "Hüdai APA - Software Developer",
-              description: "Backend · Java/Spring Boot · React/Tailwind · Flutter"
+            description: "Backend · Java/Spring Boot · React/Tailwind · Flutter"
           }
         }
       }

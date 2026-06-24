@@ -2,6 +2,15 @@
 User-agent: *
 Allow: /
 
-# Root is excluded from indexing via meta robots in /index.html
+# AdMob / app-ads.txt crawler için özel izin
+User-agent: Google-adstxt
+Disallow:
+
+# Diğer Google crawler'ları için de güvenli tarafa
+User-agent: Mediapartners-Google
+Disallow:
+
+User-agent: Googlebot
+Disallow:
 
 Sitemap: https://hudaiapa88.github.io/sitemap.xml
